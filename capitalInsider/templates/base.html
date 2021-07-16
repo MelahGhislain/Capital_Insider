@@ -78,176 +78,22 @@
     <div id="page">
 
       {% include "desktopNav.html" %}
+
        
-        <!-- Slider -->
-        <div class="no-padding">
-          <div class="slider slider-dark-arrow slider-home-1">
-            <div class="fullwidthbanner-container">
-                <div id="revolution-slider-home-1">
-                  <ul>  <!-- SLIDE  -->
-                      <li data-transition="fade" data-slotamount="7" data-masterspeed="1500" data-delay="4000">
-                        <!-- MAIN IMAGE -->
-                        <img src="{% static 'images/Slider/1.jpg' %}"  alt="slidebg1"  data-bgfit="cover" data-bgposition="center" data-bgrepeat="no-repeat">
-                        <!-- LAYER NR. 1 -->
-                        <div class="tp-caption sfr stt h2-text"
-                          data-x="0" 
-                          data-y="298"
-                          data-speed="400" 
-                          data-start="1000"
-                          data-easing="easeInOut"
-                          >Great experience
-                        </div>
+        {% block carousel%}
 
-                        <!-- LAYER NR. 2 -->
-                        <div class="tp-caption sfr stt h1-text"
-                          data-x="0" 
-                          data-y="381" 
-                          data-speed="400"
-                          data-start="1400"
-                          data-easing="easeInOut"
-                          >Meet our adviser
-                        </div>
 
-                        <!-- LAYER NR. 3 -->
-                        <div class="tp-caption sfr stb h3-text"
-                          data-x="0" 
-                          data-y="455" 
-                         
-                          data-speed="400"
-                          data-start="1700"
-                          data-easing="easeInOut"
-                         style="max-width: 565px">
-                           Comprehensive financial advice and financial services that are tailored to meet your individual needs.
-                        </div>
+        {% endblock%}
 
-                        <!-- LAYER NR. 4 -->
-                        <div class="tp-caption sfr stb group-btn-slider"
-                          data-x="0" 
-                          data-y="580" 
-                        
-                          data-speed="400"
-                          data-start="1900"
-                          data-easing="easeInOut"
-                          > <a href="servicesList.html" class="ot-btn large-btn btn-rounded btn-main-color btn-1">Our Services</a>  <a href="servicesList2.html" class="ot-btn large-btn btn-rounded btn-sub-color btn-2">Quick Call Back</a> 
-                        </div>
-                      </li>
-                       <!-- SLIDE  -->
-                       <li data-transition="fade" data-slotamount="7" data-masterspeed="1500" data-delay="6000">
-                            <!-- MAIN IMAGE -->
-                            <img src="{% static 'images/Slider/2.jpg' %}"  alt="slidebg1"  data-bgfit="cover" data-bgposition="center" data-bgrepeat="no-repeat">
-                            
-                            <!-- LAYER NR. 1 -->
-                            <div class="tp-caption sfr stt h2-text"
-                              data-x="0" 
-                              data-y="298"
-                              data-speed="400" 
-                              data-start="1000"
-                              data-easing="easeInOut"
-                              >HELPING YOU TO
-                            </div>
 
-                           
 
-                            
-                            <!-- LAYER NR. 2 -->
-                            <div class="tp-caption sfr stt h1-text"
-                              data-x="0" 
-                              data-y="381" 
-                              data-speed="400"
-                              data-start="1400"
-                              data-easing="easeInOut"
-                              >GROW YOUR BUSINESS
-                            </div>
-
-                            <!-- LAYER NR. 3 -->
-                            <div class="tp-caption sfr stb h3-text"
-                              data-x="0" 
-                              data-y="455"
-                             
-                              data-speed="400"
-                              data-start="1700"
-                              data-easing="easeInOut"
-                             style="max-width: 565px">
-                               Comprehensive financial advice and financial services that are tailored to meet your individual needs.
-                            </div>
-                            <!-- LAYER NR. 4 -->
-                            <div class="tp-caption sfr stb group-btn-slider"
-                              data-x="0" 
-                              data-y="580" 
-                            
-                              data-speed="400"
-                              data-start="1900"
-                              data-easing="easeInOut"
-                              > <a href="servicesList.html" class="ot-btn large-btn btn-rounded btn-main-color btn-1">Our Services</a>  <a href="servicesList2.html" class="ot-btn large-btn btn-rounded btn-sub-color btn-2">Quick Call Back</a> 
-                            </div>
-                      </li>
-                      <!--SLIDE-->
-                      <li data-transition="fade" data-slotamount="7" data-masterspeed="1500" data-delay="4000">
-                        <!-- MAIN IMAGE -->
-                        <img src="{% static 'images/Slider/3.jpg' %}"  alt="slidebg1"  data-bgfit="cover" data-bgposition="center" data-bgrepeat="no-repeat">
-                        <!-- LAYER NR. 1 -->
-                        <div class="tp-caption sfr stt h2-text"
-                          data-x="0" 
-                          data-y="298"
-                          data-speed="400" 
-                          data-start="1000"
-                          data-easing="easeInOut"
-                          >Finance Focus
-                        </div>
-
-                        <!-- LAYER NR. 2 -->
-                        <div class="tp-caption sfr stt h1-text"
-                          data-x="0" 
-                          data-y="381" 
-                          data-speed="400"
-                          data-start="1400"
-                          data-easing="easeInOut"
-                          >Road to Success
-                        </div>
-
-                        <!-- LAYER NR. 3 -->
-                        <div class="tp-caption sfr stb h3-text"
-                          data-x="0" 
-                          data-y="455" 
-                         
-                          data-speed="400"
-                          data-start="1700"
-                          data-easing="easeInOut"
-                         style="max-width: 565px">
-                           Listen to what you want for your future, then together we create a plan to help you get there
-                        </div>
-
-                        <!-- LAYER NR. 4 -->
-                        <div class="tp-caption sfr stb group-btn-slider"
-                          data-x="0" 
-                          data-y="580" 
-                        
-                          data-speed="400"
-                          data-start="1900"
-                          data-easing="easeInOut"
-                          > <a href="servicesList.html" class="ot-btn large-btn btn-rounded btn-main-color btn-1">Our Services</a>  <a href="servicesList2.html" class="ot-btn large-btn btn-rounded btn-sub-color btn-2">Quick Call Back</a> 
-                        </div>
-                      </li>
-                  </ul>
-                </div>
-            </div>
-          </div>
-        </div><!-- Slider Revolution End -->
-
-        
-      
+        {% block content %}
         
 
-        
-       
-        
-       
-        
-      
-       
-      	
-      	
-      
+
+
+          
+          {% endblock %}
         
 
       	<!-- Footer -->	
