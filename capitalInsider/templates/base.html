@@ -70,7 +70,11 @@
               <div class="row">
                 <div class="section-title">
                   <div class="col-md-12">
-                    <h2>Our services</h2>
+                    <h2>
+                      {% block title %}
+
+                      {% endblock %}
+                    </h2>
                   </div>
                 </div>
               </div><!-- End Row -->
@@ -85,7 +89,11 @@
                 <div class="col-md-12">
                     <ol class="breadcrumb breadcrumb-finance">
                         <li><a href="index.html"> <i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
-                        <li class="active">Our Services</li>
+                        <li class="active">
+                          {% block sub-title %}
+
+                          {% endblock %}
+                        </li>
                       </ol>
                 </div><!--  End col -->
               </div> <!-- End Row -->
