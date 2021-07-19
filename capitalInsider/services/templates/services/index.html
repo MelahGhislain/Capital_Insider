@@ -1,0 +1,143 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Our services
+{% endblock %}
+
+
+{% block sub-title %}
+    Our services
+{% endblock %}
+
+{% block content %}
+
+    <!-- Component Thumbnail Left Icon SVG -->
+    <div class="padding-top-70 padding-bottom-70">
+        <div class="container">
+            <div class="row clearfix">
+              <div class="services-wrap">
+                <div class="services-list-2">
+                    <article class="col-sm-6 col-md-4 thumbnail-style thumbnail-icon-item text-left ">
+                       
+                         <div class="thumbnail icon-left">
+                            <img src="{% static 'images/Services/1.png' %}" alt="">
+                           <div class="caption">
+                             <h4>Finacial Planning</h4>
+                             <p>
+                              Quisque pulvinar libero dolor, quis bibendum eros euismod sit amet. Proin dapibus id diam at
+                             </p>
+                              <a class="learn-more" href="{% url 'service-detail' %}"><i class="fa fa-caret-right" aria-hidden="true"></i>  Learn More
+                                
+                              </a>
+                           </div>
+                         </div>
+                       
+                    </article><!-- End article -->
+                    <article class="col-sm-6 col-md-4 thumbnail-style thumbnail-icon-item text-left ">
+                       
+                         <div class="thumbnail icon-left">
+                             <img class="img-icon-thumbnail" src="{% static 'images/Services/2.png' %}" alt="">
+                           <div class="caption">
+                             <h4>Investments Management</h4>
+                             <p>
+                              Quisque pulvinar libero dolor, quis bibendum eros euismod sit amet. Proin dapibus id diam at
+                             </p>
+                             <a class="learn-more" href="{% url 'service-detail' %}"><i class="fa fa-caret-right" aria-hidden="true"></i>  Learn More
+                                
+                              </a>
+                           </div>
+                         </div>
+                       
+                    </article><!-- End article -->
+                    <article class="col-sm-6 col-md-4 thumbnail-style thumbnail-icon-item text-left ">
+                       
+                         <div class="thumbnail icon-left">
+                             <img class="img-icon-thumbnail" src="{% static 'images/Services/3.png' %}" alt="">
+                           <div class="caption">
+                             <h4>Taxes Planning</h4>
+                             <p>
+                              Quisque pulvinar libero dolor, quis bibendum eros euismod sit amet. Proin dapibus id diam at
+                             </p>
+                             <a class="learn-more" href="{% url 'service-detail' %}"><i class="fa fa-caret-right" aria-hidden="true"></i>  Learn More
+                                
+                              </a>
+                           </div>
+                         </div>
+                       
+                    </article><!-- End article -->
+                    <article class="col-sm-6 col-md-4 thumbnail-style thumbnail-icon-item text-left no-margin">
+                       
+                         <div class="thumbnail icon-left">
+                             <img class="img-icon-thumbnail" src="{% static 'images/Services/4.png' %}" alt="">
+                           <div class="caption">
+                             <h4>Business Loan</h4>
+                             <p>
+                              Quisque pulvinar libero dolor, quis bibendum eros euismod sit amet. Proin dapibus id diam at
+                             </p>
+                             <a class="learn-more" href="{% url 'service-detail' %}"><i class="fa fa-caret-right" aria-hidden="true"></i>  Learn More
+                                
+                              </a>
+                           </div>
+                         </div>
+                       
+                    </article><!-- End article -->
+                    <article class="col-sm-6 col-md-4 thumbnail-style thumbnail-icon-item text-left no-margin">
+                       
+                         <div class="thumbnail icon-left">
+                             <img class="img-icon-thumbnail" src="{% static 'images/Services/5.png' %}" alt="">
+                           <div class="caption">
+                             <h4>Insurance Consulting</h4>
+                             <p>
+                              Quisque pulvinar libero dolor, quis bibendum eros euismod sit amet. Proin dapibus id diam at
+                             </p>
+                             <a class="learn-more" href="{% url 'service-detail' %}"><i class="fa fa-caret-right" aria-hidden="true"></i>  Learn More
+                                
+                              </a>
+                           </div>
+                         </div>
+                       
+                    </article><!-- End article -->
+                     <article class="col-sm-6 col-md-4 thumbnail-style thumbnail-icon-item text-left no-margin">
+                     
+                       <div class="thumbnail icon-left">
+                           <img class="img-icon-thumbnail" src="{% static 'images/Services/6.png' %}" alt="">
+                         <div class="caption">
+                           <h4>Retirement Managerment</h4>
+                           <p>
+                            Quisque pulvinar libero dolor, quis bibendum eros euismod sit amet. Proin dapibus id diam at
+                           </p>
+                           <a class="learn-more" href="{% url 'service-detail' %}"><i class="fa fa-caret-right" aria-hidden="true"></i>  Learn More
+                                
+                              </a>
+                         </div>
+                       </div>
+                     
+                    </article><!-- End article -->
+                </div>
+  
+              </div>
+            </div><!-- End Row -->
+        </div><!-- End container -->
+    </div> <!-- End section -->
+
+
+ <!-- Get a quote section -->
+ <section class="bg-grey no-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+            <div class="quote-warp">
+              <div class="quote-text">
+                <h2> We focus on advice consulting business financials <a href="#" class="ot-btn large-btn btn-rounded btn-hightlight-color">Get A Quote</a></h2>
+                
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+{% endblock %}
+
