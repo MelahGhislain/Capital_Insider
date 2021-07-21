@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class projects(models.Model):
+class Projects(models.Model):
     client = models.CharField(max_length=50, blank=True,null=True)
     year_completed = models.DateTimeField(blank=True,null=True)
     value = models.FloatField(blank=True,null=True)
