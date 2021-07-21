@@ -28,9 +28,10 @@
                             <a href="#" data-filter=".Insurance">Insurance</a>
                             <a href="#" data-filter=".Retirement">Retirement</a>
                       </div> <!-- End Project Fillter -->
+
                     <div class="row">
                       <div class="clearfix projectContainer projectContainer3column">
-         
+                      <!--
                           <div class="element-item  Financial">
                             <a class="img-contain-isotope" href="{% url 'project-detail' %}">
                               <img src="{% static 'images/Project/1.jpg' %}" class="img-responsive" alt="Image">
@@ -101,15 +102,27 @@
                              </a>
                              <a href="{% url 'project-detail' %}"><h5 class="title-project">MO Insurance </h5></a>
                                   <a href="{% url 'project-detail' %}" class="cateProject">Insurance</a>
-                          </div>    
+                          </div>  -->
+                          
+                          {% for project in projects %}
+                            <div class="element-item Insurance">
+                              <a class="img-contain-isotope" href="{% url 'project-detail' %}">
+                              <img src="static{{ project.main_image.url }}" class="img-responsive" alt="Image">
+                              </a>
+                              <a href="{% url 'project-detail' %}"><h5 class="title-project">{{ project.title }}</h5></a>
+                                    <a href="{% url 'project-detail' %}" class="cateProject">{{ project.category }}</a>
+                            </div>  
+                          {% endfor %}
+                          
                       </div>  <!-- End project Container -->
                     </div>
+
                   </div> <!-- End  -->
                 </div><!-- End Col -->
               </div><!-- End Row -->
 
         </div> <!-- End Container -->
-</section><!-- End Section -->
+      </section><!-- End Section -->
     
 
  <!-- Get a quote section -->
