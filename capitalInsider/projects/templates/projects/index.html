@@ -2,12 +2,12 @@
 {% load static %}
 
 {% block title %}
-    Our Projects
+    <h2>Our Projects</h2>
 {% endblock %}
 
 
 {% block sub-title %}
-    Our Projects
+    <li class="active">Our Projects</li>
 {% endblock %}
 
 {% block content %}
@@ -28,88 +28,101 @@
                             <a href="#" data-filter=".Insurance">Insurance</a>
                             <a href="#" data-filter=".Retirement">Retirement</a>
                       </div> <!-- End Project Fillter -->
+
                     <div class="row">
                       <div class="clearfix projectContainer projectContainer3column">
-         
+                      <!--
                           <div class="element-item  Financial">
-                            <a class="img-contain-isotope" href="projectsDetail.html">
+                            <a class="img-contain-isotope" href="{% url 'project-detail' %}">
                               <img src="{% static 'images/Project/1.jpg' %}" class="img-responsive" alt="Image">
                             </a>
-                              <a href="projectsDetail.html"><h5 class="title-project">2016 Retirement Plan</h5></a>
-                                <a href="projectsDetail.html" class="cateProject">Financial</a>
+                              <a href="{% url 'project-detail' %}"><h5 class="title-project">2016 Retirement Plan</h5></a>
+                                <a href="{% url 'project-detail' %}" class="cateProject">Financial</a>
                           </div>
                        
                           <div class="element-item Investments ">
-                            <a class="img-contain-isotope" href="projectsDetail.html">
+                            <a class="img-contain-isotope" href="{% url 'project-detail' %}">
                                <img src="{% static 'images/Project/2.jpg' %}" class="img-responsive" alt="Image">
                              </a>
-                               <a href="projectsDetail.html"><h5 class="title-project">Financial Report</h5></a>
-                                <a href="projectsDetail.html" class="cateProject">Investments</a>
+                               <a href="{% url 'project-detail' %}"><h5 class="title-project">Financial Report</h5></a>
+                                <a href="{% url 'project-detail' %}" class="cateProject">Investments</a>
                           </div>    
                        
                           <div class="element-item Taxes">
-                            <a class="img-contain-isotope" href="projectsDetail.html">
+                            <a class="img-contain-isotope" href="{% url 'project-detail' %}">
                                <img src="{% static 'images/Project/3.jpg' %}" class="img-responsive" alt="Image">
                                </a>
-                               <a href="projectsDetail.html"><h5 class="title-project">IEM Financial Statements</h5></a>
-                              <a href="projectsDetail.html" class="cateProject">Taxes</a>
+                               <a href="{% url 'project-detail' %}"><h5 class="title-project">IEM Financial Statements</h5></a>
+                              <a href="{% url 'project-detail' %}" class="cateProject">Taxes</a>
                           </div>
                            
                           <div class="element-item Insurance ">
-                            <a class="img-contain-isotope" href="projectsDetail.html">
+                            <a class="img-contain-isotope" href="{% url 'project-detail' %}">
                               <img src="{% static 'images/Project/4.jpg' %}" class="img-responsive" alt="Image">
                               </a>
-                              <a href="projectsDetail.html"><h5 class="title-project">MO Insurance Pack 2</h5></a>
-                                  <a href="projectsDetail.html" class="cateProject">Insurance</a>
+                              <a href="{% url 'project-detail' %}"><h5 class="title-project">MO Insurance Pack 2</h5></a>
+                                  <a href="{% url 'project-detail' %}" class="cateProject">Insurance</a>
                           </div>
                        
                           <div class="element-item Insurance">
-                            <a class="img-contain-isotope" href="projectsDetail.html">
+                            <a class="img-contain-isotope" href="{% url 'project-detail' %}">
                              <img src="{% static 'images/Project/5.jpg' %}" class="img-responsive" alt="Image">
                              </a>
-                             <a href="projectsDetail.html"><h5 class="title-project">Business Growth Solutions</h5></a>
-                                  <a href="projectsDetail.html" class="cateProject">Insurance</a>
+                             <a href="{% url 'project-detail' %}"><h5 class="title-project">Business Growth Solutions</h5></a>
+                                  <a href="{% url 'project-detail' %}" class="cateProject">Insurance</a>
                           </div>
                        
                           <div class="element-item Retirement">
-                            <a class="img-contain-isotope" href="projectsDetail.html">
+                            <a class="img-contain-isotope" href="{% url 'project-detail' %}">
                               <img src="{% static 'images/Project/6.jpg' %}" class="img-responsive" alt="Image">
                               </a>
-                              <a href="projectsDetail.html"><h5 class="title-project">Business Loan</h5></a>
-                                  <a href="projectsDetail.html" class="cateProject">Retirement</a>
+                              <a href="{% url 'project-detail' %}"><h5 class="title-project">Business Loan</h5></a>
+                                  <a href="{% url 'project-detail' %}" class="cateProject">Retirement</a>
                           </div>
                        
                           <div class="element-item Investments ">
-                            <a class="img-contain-isotope" href="projectsDetail.html">
+                            <a class="img-contain-isotope" href="{% url 'project-detail' %}">
                                <img src="{% static 'images/Project/7.jpg' %}" class="img-responsive" alt="Image">
                                </a>
-                               <a href="projectsDetail.html"><h5 class="title-project">Enterprise Loan</h5></a>
-                                  <a href="projectsDetail.html" class="cateProject">Investments</a>
+                               <a href="{% url 'project-detail' %}"><h5 class="title-project">Enterprise Loan</h5></a>
+                                  <a href="{% url 'project-detail' %}" class="cateProject">Investments</a>
                           </div>    
                            
                           <div class="element-item Financial">
-                            <a class="img-contain-isotope" href="projectsDetail.html">
+                            <a class="img-contain-isotope" href="{% url 'project-detail' %}">
                               <img src="{% static 'images/Project/8.jpg' %}" class="img-responsive" alt="Image">
                             </a>
-                             <a href="projectsDetail.html"><h5 class="title-project">Money Market</h5></a>
-                                  <a href="projectsDetail.html" class="cateProject">Financial</a>
+                             <a href="{% url 'project-detail' %}"><h5 class="title-project">Money Market</h5></a>
+                                  <a href="{% url 'project-detail' %}" class="cateProject">Financial</a>
                           </div>
 
                           <div class="element-item Insurance">
-                            <a class="img-contain-isotope" href="projectsDetail.html">
+                            <a class="img-contain-isotope" href="{% url 'project-detail' %}">
                              <img src="{% static 'images/Project/9.jpg' %}" class="img-responsive" alt="Image">
                              </a>
-                             <a href="projectsDetail.html"><h5 class="title-project">MO Insurance </h5></a>
-                                  <a href="projectsDetail.html" class="cateProject">Insurance</a>
-                          </div>    
+                             <a href="{% url 'project-detail' %}"><h5 class="title-project">MO Insurance </h5></a>
+                                  <a href="{% url 'project-detail' %}" class="cateProject">Insurance</a>
+                          </div>  -->
+                          
+                          {% for project in projects %}
+                            <div class="element-item Insurance">
+                              <a class="img-contain-isotope" href="{% url 'project-detail' %}">
+                              <img src="{{ project.main_image.url }}" class="img-responsive" alt="Image">
+                              </a>
+                              <a href="{% url 'project-detail' %}"><h5 class="title-project">{{ project.title }}</h5></a>
+                                    <a href="{% url 'project-detail' %}" class="cateProject">{{ project.category }}</a>
+                            </div>  
+                          {% endfor %}
+                          
                       </div>  <!-- End project Container -->
                     </div>
+
                   </div> <!-- End  -->
                 </div><!-- End Col -->
               </div><!-- End Row -->
 
         </div> <!-- End Container -->
-</section><!-- End Section -->
+      </section><!-- End Section -->
     
 
  <!-- Get a quote section -->
