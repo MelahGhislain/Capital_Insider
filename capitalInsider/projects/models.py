@@ -1,4 +1,5 @@
 from django.db import models
+from  django.urls import reverse
 
 # Create your models here.
 class Projects(models.Model):
@@ -12,6 +13,9 @@ class Projects(models.Model):
     main_image = models.ImageField(blank=False, null=False)
     image1 = models.ImageField(blank=True, null=True)
     image2 = models.ImageField(blank=True, null=True)
+
+    def get_absolute_url(self):
+        return reverse("project-detail", kwargs={"id": self.id})
 
     def __str__(self):
         return self.title
