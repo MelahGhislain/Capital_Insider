@@ -13,6 +13,9 @@ class Services(models.Model):
     hard_work = models.TextField()
     success = models.TextField()
 
+    def __str__(self):
+        return self.title
+
 class Brochures(models.Model):
-    PDFfile = models.FileField()
-    DOCfile = models.FileField()
+    PDFfile = models.FileField(blank=False, null=False)
+    DOCfile = models.FileField(blank=False, null=False)

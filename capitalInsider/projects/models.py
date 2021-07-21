@@ -12,3 +12,6 @@ class Projects(models.Model):
     main_image = models.ImageField(blank=False, null=False)
     image1 = models.ImageField(blank=True, null=True)
     image2 = models.ImageField(blank=True, null=True)
+
+    def __str__(self):
+        return self.title
