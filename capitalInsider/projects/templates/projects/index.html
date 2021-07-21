@@ -106,7 +106,7 @@
                                   <a href="{% url 'project-detail' %}" class="cateProject">Insurance</a>
                           </div>  -->
                           
-                          {% for project in projects %}
+                          {% for project in project_data %}
                             <div class="element-item {{ project.category|title }}">
                               <a class="img-contain-isotope" href="{% url 'project-detail' project.id %}">
                               <img src="{{ project.main_image.url }}" class="img-responsive" alt="Image">
