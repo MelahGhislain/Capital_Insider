@@ -22,11 +22,13 @@
                       <div class="projectFilter project-terms project-terms-list-page">
  
                             <a href="#" data-filter="*" class="current">All</a>
-                            <a href="#" data-filter=".Financial">Financial</a>
-                            <a href="#" data-filter=".Investments">Investments</a>
+                            {% for category in project_categories %}
+                              <a href="#" data-filter=".{{category.category|title}}">{{category.category|title}}</a>
+                            {% endfor %}
+                            <!-- <a href="#" data-filter=".Investments">Investments</a>
                             <a href="#" data-filter=".Taxes">Taxes</a>
                             <a href="#" data-filter=".Insurance">Insurance</a>
-                            <a href="#" data-filter=".Retirement">Retirement</a>
+                            <a href="#" data-filter=".Retirement">Retirement</a> -->
                       </div> <!-- End Project Fillter -->
 
                     <div class="row">
@@ -105,12 +107,12 @@
                           </div>  -->
                           
                           {% for project in projects %}
-                            <div class="element-item Insurance">
-                              <a class="img-contain-isotope" href="{% url 'project-detail' %}">
+                            <div class="element-item {{ project.category|title }}">
+                              <a class="img-contain-isotope" href="{% url 'project-detail' project.id %}">
                               <img src="{{ project.main_image.url }}" class="img-responsive" alt="Image">
                               </a>
-                              <a href="{% url 'project-detail' %}"><h5 class="title-project">{{ project.title }}</h5></a>
-                                    <a href="{% url 'project-detail' %}" class="cateProject">{{ project.category }}</a>
+                              <a href="{% url 'project-detail' project.id %}"><h5 class="title-project">{{ project.title|title }}</h5></a>
+                                    <a href="{% url 'project-detail' project.id %}" class="cateProject">{{ project.category|title }}</a>
                             </div>  
                           {% endfor %}
                           
