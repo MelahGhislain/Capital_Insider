@@ -25,14 +25,27 @@
                 <div class="projectDetail">
                     <div class="col-md-6">
                         <h5>Project Details</h5>
-                        <p>Client: {{project.client}}</p>
+                        {% if project.client %}
+                          <p>Client: {{ project.client }}</p>
+                        {% endif %}
                         <!-- <p>Location: Central Street, San Francisco</p> -->
-                        <p>Year Completed: project.year_completed</p>
-                        <p>Value: $project.value</p>
-                        <p>Adviser: project.adviser</p>
+                        {% if project.year_completed %}
+                        <p>Year Completed: {{ project.year_completed }}</p>
+                        {% endif %}
+
+                        {% if project.value %}
+                        <p>Value: ${{ project.value }}</p>
+                        {% endif %}
+
+                        {% if project.adviser %}
+                        <p>Adviser: {{ project.adviser }}</p>
+                        {% endif %}
+                        
+
+                        
                         <br>
-                        <h5>Project Details</h5>
-                        <p>project.description</p>
+                        <h5>Project Description</h5>
+                        <p>{{ project.description }}</p>
                         <!-- <p>Curabitur dictum viverra urna. Nam ullamcorper egestas lacinia. Fusce fermentum velit non velit malesuada, vel aliquam leo viverra. Etiam id justo mattis, bibendum eros non, finibus diam. Suspendisse suscipit, arcu ac rutrum pellentesque, nunc sapien molestie nisi, id pellentesque odio diam quis justo. Proin rutrum convallis mauris. Morbi vulputate bibendum velit id tincidunt. Fusce auctor aliquam nunc in tristique. Nulla luctus dictum enim ut pulvinar.</p> -->
                         <br>
                         <!-- <p>
@@ -42,9 +55,15 @@
                     <div class="col-md-6">
                       <div class="zoom-gallery">
                         <a class="img-gallery-contain"  href="{{ project.main_image.url }}" data-source="{{ project.client }}" title="{{ project.client }}"><img src="{{ project.main_image.url }}" class="img-responsive" alt="Image"></a>
-                        <a class="img-gallery-contain"  href="{{ project.image1.url }}" data-source="{{ project.client }}" title="{{ project.client }}"><img src="{{ project.image1.url }}" class="img-responsive" alt="Image"></a>
-                        <a class="img-gallery-contain" href="{{ project.image2.url }}" data-source="{{ project.client }}" title="{{ project.client }}"><img src="{{ project.image2.url }}" class="img-responsive" alt="Image"></a>
-                      </div>
+                        
+                        {% if project.image1 %}
+                          <a class="img-gallery-contain"  href="{{ project.image1.url }}" data-source="{{ project.client }}" title="{{ project.client }}"><img src="{{ project.image1.url }}" class="img-responsive" alt="Image"></a>
+                        {% endif %}
+
+                        {% if project.image2 %}
+                          <a class="img-gallery-contain" href="{{ project.image2.url }}" data-source="{{ project.client }}" title="{{ project.client }}"><img src="{{ project.image2.url }}" class="img-responsive" alt="Image"></a>
+                        {% endif %}
+                        </div>
                     </div> 
                 </div><!-- End project detail -->
             </div><!-- End Row -->
