@@ -17,5 +17,6 @@ def projectPage(request):
         })
 
 def projectDetail(request, id):
-    projects = Projects.objects.all()
-    return render(request, 'projects/project_detail.html')
+    pk = str(id)
+    project = Projects.objects.all().filter(id=pk)
+    return render(request, 'projects/project_detail.html', {"project": project})

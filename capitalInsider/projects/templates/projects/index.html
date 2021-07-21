@@ -108,11 +108,11 @@
                           
                           {% for project in projects %}
                             <div class="element-item {{ project.category|title }}">
-                              <a class="img-contain-isotope" href="{% url 'project-detail' %}">
+                              <a class="img-contain-isotope" href="{% url 'project-detail' project.id %}">
                               <img src="{{ project.main_image.url }}" class="img-responsive" alt="Image">
                               </a>
-                              <a href="{% url 'project-detail' %}"><h5 class="title-project">{{ project.title|title }}</h5></a>
-                                    <a href="{% url 'project-detail' %}" class="cateProject">{{ project.category|title }}</a>
+                              <a href="{% url 'project-detail' project.id %}"><h5 class="title-project">{{ project.title|title }}</h5></a>
+                                    <a href="{% url 'project-detail' project.id %}" class="cateProject">{{ project.category|title }}</a>
                             </div>  
                           {% endfor %}
                           

@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Projects(models.Model):
-    client = models.CharField(max_length=50, blank=True,null=True)
+    client = models.CharField(max_length=50, blank=False,null=False)
     year_completed = models.DateTimeField(blank=True,null=True)
     value = models.FloatField(blank=True,null=True)
     adviser = models.CharField(max_length=150)

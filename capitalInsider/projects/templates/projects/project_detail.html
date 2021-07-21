@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %}
-        <h2>Financial Report</h2>
+        <h2>{{project.title|title}}</h2>
         <div class="customNavigation arrowProjectPage pull-right">
             <a class="btn prev-testimonials-1-columns"><i class="fa fa-chevron-left"></i></a>
             <a class="btn next-testimonials-1-columns"><i class="fa fa-chevron-right"></i></a>
@@ -12,7 +12,7 @@
 
 {% block sub-title %}
         <li class=""><a href="#"> Projects</a></li>
-        <li class="active">Finanacial</li>
+        <li class="active">{{project.category|title}</li>
 {% endblock %}
 
 {% block content %}
@@ -25,24 +25,25 @@
                 <div class="projectDetail">
                     <div class="col-md-6">
                         <h5>Project Details</h5>
-                        <p>Client: Au Company</p>
-                        <p>Location: Central Street, San Francisco</p>
-                        <p>Year Completed: 2016</p>
-                        <p>Value: $350,000</p>
-                        <p>Adviser: Sean Rogers & Rachel Peters</p>
+                        <p>Client: {{project.client}}</p>
+                        <!-- <p>Location: Central Street, San Francisco</p> -->
+                        <p>Year Completed: project.year_completed</p>
+                        <p>Value: $project.value</p>
+                        <p>Adviser: project.adviser</p>
                         <br>
                         <h5>Project Details</h5>
-                        <p>Curabitur dictum viverra urna. Nam ullamcorper egestas lacinia. Fusce fermentum velit non velit malesuada, vel aliquam leo viverra. Etiam id justo mattis, bibendum eros non, finibus diam. Suspendisse suscipit, arcu ac rutrum pellentesque, nunc sapien molestie nisi, id pellentesque odio diam quis justo. Proin rutrum convallis mauris. Morbi vulputate bibendum velit id tincidunt. Fusce auctor aliquam nunc in tristique. Nulla luctus dictum enim ut pulvinar.</p>
+                        <p>project.description</p>
+                        <!-- <p>Curabitur dictum viverra urna. Nam ullamcorper egestas lacinia. Fusce fermentum velit non velit malesuada, vel aliquam leo viverra. Etiam id justo mattis, bibendum eros non, finibus diam. Suspendisse suscipit, arcu ac rutrum pellentesque, nunc sapien molestie nisi, id pellentesque odio diam quis justo. Proin rutrum convallis mauris. Morbi vulputate bibendum velit id tincidunt. Fusce auctor aliquam nunc in tristique. Nulla luctus dictum enim ut pulvinar.</p> -->
                         <br>
-                        <p>
+                        <!-- <p>
                           Sed id fermentum lectus, vel sollicitudin ipsum. Nulla porttitor, dolor ut sagittis lacinia, nulla mauris elementum leo, at viverra massa sapien id diam. Phasellus et ornare sem. Integer dictum imperdiet luctus. Sed luctus vel nisl eu convallis. Integer gravida enim velit, ultricies sodales erat imperdiet ac.
-                        </p>
+                        </p> -->
                     </div> <!-- End col -->
                     <div class="col-md-6">
                       <div class="zoom-gallery">
-                        <a class="img-gallery-contain"  href="{% static 'images/Project/zoom1.jpg' %}" data-source="Au Company" title="Au Company"><img src="{% static 'images/Project/10.jpg' %}" class="img-responsive" alt="Image"></a>
-                        <a class="img-gallery-contain"  href="{% static 'images/Project/zoom2.jpg' %}" data-source="Au Company" title="Au Company"><img src="{% static 'images/Project/11.jpg' %}" class="img-responsive" alt="Image"></a>
-                        <a class="img-gallery-contain" href="{% static 'images/Project/zoom13jpg' %}" data-source="Au Company" title="Au Company"><img src="{% static 'images/Project/12.jpg' %}" class="img-responsive" alt="Image"></a>
+                        <a class="img-gallery-contain"  href="{{ project.main_image.url }}" data-source="{{ project.client }}" title="{{ project.client }}"><img src="{{ project.main_image.url }}" class="img-responsive" alt="Image"></a>
+                        <a class="img-gallery-contain"  href="{{ project.image1.url }}" data-source="{{ project.client }}" title="{{ project.client }}"><img src="{{ project.image1.url }}" class="img-responsive" alt="Image"></a>
+                        <a class="img-gallery-contain" href="{{ project.image2.url }}" data-source="{{ project.client }}" title="{{ project.client }}"><img src="{{ project.image2.url }}" class="img-responsive" alt="Image"></a>
                       </div>
                     </div> 
                 </div><!-- End project detail -->
