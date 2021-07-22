@@ -1,0 +1,136 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+    <h2>Contact Us</h2>
+{% endblock %}
+
+
+{% block sub-title %}
+    <li class="active">Contact Us</li>
+{% endblock %}
+
+{% block content %}
+
+    <!-- Section form contact -->
+    <section class="padding-top:50px;">
+    	<div class="container">
+    	<div class="row">
+    	<div class="col-md-7 left-contact">
+            <h4>Contact Info</h4>
+    				<div class="accordion-style-light no-round accordion-3">
+                <div class="accordion-warp">
+                  <div class="panel-group" id="accordion3">
+                  <div class="panel panel-default">
+                      <div class="panel-heading">
+                          <h4 class="panel-title">
+                              <a data-toggle="collapse" data-parent="#accordion3" href="#collapseOne2"><i class="fa fa-trophy" aria-hidden="true"></i> Finance the best choice for your business</a>
+                          </h4>
+                      </div>
+                      <div id="collapseOne2" class="panel-collapse collapse in">
+                          <div class="panel-body">
+                            <div class="accordion-content">
+                              <p>Fusce ornare mi vel risus porttitor dignissim. Nunc eget risus at ipsum blandit ornare vel sed velit. Proin gravida arcu nisl, a dignissim mauris placerat id. Vivamus interdum urna at sapien varius elementum. Suspendisse ut mi felis et interdum libero lacinia vel. Aenean elementum odio ut lorem cursus, eu auctor magna pellentesque.  </p>
+                            </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="panel panel-default">
+                      <div class="panel-heading">
+                          <h4 class="panel-title">
+                              <a data-toggle="collapse" data-parent="#accordion3" href="#collapseTwo2" class="collapsed"><i class="fa fa-map-marker" aria-hidden="true"></i> Contacts and location </a>
+                          </h4>
+                      </div>
+                      <div id="collapseTwo2" class="panel-collapse collapse">
+                          <div class="panel-body">
+                              <div class="accordion-content">
+                              <dl class="dl-horizontal"> 
+                                <dt>Location</dt> <dd><i class="fa fa-map-marker"></i> 8th floor, 379 Hudson St, New York, NY 10018</dd> 
+                                <dt>Administration Phone Number</dt> <dd><i class="fa fa-phone"></i> (+1) 96 716 6879</dd> 
+                                <dt>FREE Hotline </dt> <dd><i class="fa fa-phone"></i>  (+84) 946 716 4545</dd> 
+                                <dt>E-mail</dt> <dd><i class="fa fa-envelope-o"></i> contact@finance.com</dd> 
+                              </dl>
+                            </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="panel panel-default">
+                      <div class="panel-heading">
+                          <h4 class="panel-title">
+                              <a data-toggle="collapse" data-parent="#accordion3" href="#collapseThree2" class="collapsed"><i class="fa fa-mobile" aria-hidden="true"></i> Financial advisors in touch</a>
+                          </h4>
+                      </div>
+                      <div id="collapseThree2" class="panel-collapse collapse">
+                          <div class="panel-body">
+                              <div class="accordion-content">
+                              <dl class="dl-horizontal"> 
+                                <dt>Financial Analyst </dt> <dd><i class="fa fa-phone"></i> (+1) 96 734 6339</dd> 
+                                <dt>Lawyer</dt> <dd><i class="fa fa-phone"></i> (+1) 96 716 6879</dd> 
+                                <dt>Personal Financial Advisor </dt> <dd><i class="fa fa-phone"></i>  (+1) 96 716 6879</dd> 
+                                <dt>Investments Expert</dt> <dd><i class="fa fa-phone"></i> (+84) 946 726 4628</dd> 
+                              </dl>
+                            </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="panel panel-default">
+                      <div class="panel-heading">
+                          <h4 class="panel-title">
+                              <a data-toggle="collapse" data-parent="#accordion3" href="#collapseFour2" class="collapsed"><i class="fa fa-twitter" aria-hidden="true"></i> Finance in social networks</a>
+                          </h4>
+                      </div>
+                      <div id="collapseFour2" class="panel-collapse collapse">
+                          <div class="panel-body">
+                              <div class="accordion-content">
+                                <p>Join us in social networks </p>
+                                <ul class="social social-dark social-bg-dark">
+                                  <li class="facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                  <li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                  <li class="google-plus"><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                  <li class="youtube"><a href="#"><i class="fa fa-youtube-play"></i></a></li>
+                                  <li class="linkedin"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                </ul>
+                                 
+                            </div>
+                          </div>
+                      </div>
+                  </div>
+                  </div> <!-- End panel group -->
+                </div>
+            </div>		
+    	</div> <!-- End col -->
+    			<div class="col-md-5 right-contact">
+    				<h4> Send Us a Message</h4>
+    				<form class="form-inline form-contact-finance form-contact-2" name="contact" method="post" action="send_form_email.php">
+                  <div class="row">
+                    <div class="form-group col-sm-12  ">
+                      <input type="text" class="form-control" name="yourName" id="yourName" placeholder="Your Name">
+                    </div>
+                    <div class="form-group col-sm-12 ">
+                      <input type="email" class="form-control" name="yourEmail" id="yourEmail" placeholder="Your Email" >
+                    </div>
+                    <div class="form-group col-sm-12 ">
+                      <input type="text" class="form-control" name="yourPhone" id="phoneNumber" placeholder="Phone Number" >
+                    </div>
+                  </div>
+                  <div class="input-content">
+                    <div class="form-group form-textarea">
+                      <textarea id="textarea" class="form-control" name="comments" rows="6" placeholder="Your Messages" ></textarea>
+                    </div>
+                  </div>
+                  <button class="ot-btn large-btn btn-rounded  btn-main-color btn-submit">Send Mail</button>
+             </form> <!-- End Form -->
+    			</div> <!-- End col -->
+    		</div>
+    	</div>
+    </section>
+    <!-- End Section -->
+   	<!-- Section Google Map -->
+   	<div class="no-padding ">
+   		<div id="map-canvas" class="margin-top-15"></div>
+   	</div>
+   	<!-- End Section -->
+
+
+{% endblock %}
