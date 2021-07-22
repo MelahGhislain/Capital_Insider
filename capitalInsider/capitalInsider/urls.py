@@ -24,6 +24,7 @@ urlpatterns = [
     path('', include('home.urls')),
     path('services/', include('services.urls')),
     path('projects/', include('projects.urls')),
+    path('aboutUs/', include('about.urls')),
 ]
 
 urlpatterns += staticfiles_urlpatterns()
