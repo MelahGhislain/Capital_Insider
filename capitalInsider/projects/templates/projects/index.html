@@ -33,78 +33,6 @@
 
                     <div class="row">
                       <div class="clearfix projectContainer projectContainer3column">
-                      <!--
-                          <div class="element-item  Financial">
-                            <a class="img-contain-isotope" href="{% url 'project-detail' %}">
-                              <img src="{% static 'images/Project/1.jpg' %}" class="img-responsive" alt="Image">
-                            </a>
-                              <a href="{% url 'project-detail' %}"><h5 class="title-project">2016 Retirement Plan</h5></a>
-                                <a href="{% url 'project-detail' %}" class="cateProject">Financial</a>
-                          </div>
-                       
-                          <div class="element-item Investments ">
-                            <a class="img-contain-isotope" href="{% url 'project-detail' %}">
-                               <img src="{% static 'images/Project/2.jpg' %}" class="img-responsive" alt="Image">
-                             </a>
-                               <a href="{% url 'project-detail' %}"><h5 class="title-project">Financial Report</h5></a>
-                                <a href="{% url 'project-detail' %}" class="cateProject">Investments</a>
-                          </div>    
-                       
-                          <div class="element-item Taxes">
-                            <a class="img-contain-isotope" href="{% url 'project-detail' %}">
-                               <img src="{% static 'images/Project/3.jpg' %}" class="img-responsive" alt="Image">
-                               </a>
-                               <a href="{% url 'project-detail' %}"><h5 class="title-project">IEM Financial Statements</h5></a>
-                              <a href="{% url 'project-detail' %}" class="cateProject">Taxes</a>
-                          </div>
-                           
-                          <div class="element-item Insurance ">
-                            <a class="img-contain-isotope" href="{% url 'project-detail' %}">
-                              <img src="{% static 'images/Project/4.jpg' %}" class="img-responsive" alt="Image">
-                              </a>
-                              <a href="{% url 'project-detail' %}"><h5 class="title-project">MO Insurance Pack 2</h5></a>
-                                  <a href="{% url 'project-detail' %}" class="cateProject">Insurance</a>
-                          </div>
-                       
-                          <div class="element-item Insurance">
-                            <a class="img-contain-isotope" href="{% url 'project-detail' %}">
-                             <img src="{% static 'images/Project/5.jpg' %}" class="img-responsive" alt="Image">
-                             </a>
-                             <a href="{% url 'project-detail' %}"><h5 class="title-project">Business Growth Solutions</h5></a>
-                                  <a href="{% url 'project-detail' %}" class="cateProject">Insurance</a>
-                          </div>
-                       
-                          <div class="element-item Retirement">
-                            <a class="img-contain-isotope" href="{% url 'project-detail' %}">
-                              <img src="{% static 'images/Project/6.jpg' %}" class="img-responsive" alt="Image">
-                              </a>
-                              <a href="{% url 'project-detail' %}"><h5 class="title-project">Business Loan</h5></a>
-                                  <a href="{% url 'project-detail' %}" class="cateProject">Retirement</a>
-                          </div>
-                       
-                          <div class="element-item Investments ">
-                            <a class="img-contain-isotope" href="{% url 'project-detail' %}">
-                               <img src="{% static 'images/Project/7.jpg' %}" class="img-responsive" alt="Image">
-                               </a>
-                               <a href="{% url 'project-detail' %}"><h5 class="title-project">Enterprise Loan</h5></a>
-                                  <a href="{% url 'project-detail' %}" class="cateProject">Investments</a>
-                          </div>    
-                           
-                          <div class="element-item Financial">
-                            <a class="img-contain-isotope" href="{% url 'project-detail' %}">
-                              <img src="{% static 'images/Project/8.jpg' %}" class="img-responsive" alt="Image">
-                            </a>
-                             <a href="{% url 'project-detail' %}"><h5 class="title-project">Money Market</h5></a>
-                                  <a href="{% url 'project-detail' %}" class="cateProject">Financial</a>
-                          </div>
-
-                          <div class="element-item Insurance">
-                            <a class="img-contain-isotope" href="{% url 'project-detail' %}">
-                             <img src="{% static 'images/Project/9.jpg' %}" class="img-responsive" alt="Image">
-                             </a>
-                             <a href="{% url 'project-detail' %}"><h5 class="title-project">MO Insurance </h5></a>
-                                  <a href="{% url 'project-detail' %}" class="cateProject">Insurance</a>
-                          </div>  -->
                           
                           {% for project in project_data %}
                             <div class="element-item {{ project.category|title }}">
@@ -112,7 +40,7 @@
                               <img src="{{ project.main_image.url }}" class="img-responsive" alt="Image">
                               </a>
                               <a href="{% url 'project-detail' project.id %}"><h5 class="title-project">{{ project.title|title }}</h5></a>
-                                    <a href="{% url 'project-detail' project.id %}" class="cateProject">{{ project.category|title }}</a>
+                              <a href="{% url 'project-detail' project.id %}" class="cateProject">{{ project.category|title }}</a>
                             </div>  
                           {% endfor %}
                           
