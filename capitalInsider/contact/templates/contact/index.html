@@ -88,7 +88,7 @@
                                 <p>Join us in social networks </p>
                                 <ul class="social social-dark social-bg-dark">
                                   {% for social in socials %}
-                                    <li class="{{social.name}}"><a href="{{social.link}}"><i class="fa fa-{{social.name}}"></i></a></li>
+                                    <li class="{{social.name}}"><a href="{{social.link}}" target="blank"><i class="fa fa-{{social.name}}"></i></a></li>
                                   {% endfor %}
                                   <!-- <li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
                                   <li class="google-plus"><a href="#"><i class="fa fa-google-plus"></i></a></li>
@@ -130,6 +130,9 @@
     	</div>
     </section>
     <!-- End Section -->
+    <div>
+      {{form}}
+    </div>
    	<!-- Section Google Map -->
    	<div class="no-padding ">
    		<div id="map-canvas" class="margin-top-15"></div>
