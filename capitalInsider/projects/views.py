@@ -19,5 +19,5 @@ def projectPage(request):
 
 
 def projectDetail(request, id):
-    project = Projects.objects.get(id=id)
+    project = Projects.objects.get(pk=id)
     return render(request, 'projects/project_detail.html', {"project": project})
