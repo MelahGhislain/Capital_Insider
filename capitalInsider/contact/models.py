@@ -23,5 +23,5 @@ class FinancialAdvisor(models.Model):
 class MailUs(models.Model):
     user_name = models.CharField(max_length=50)
     email = models.EmailField()
-    phone_num = models.IntegerField()
+    phone_num = models.CharField(max_length=50)
     message = models.TextField(max_length=250)
