@@ -5,8 +5,14 @@ class AboutUs(models.Model):
     title = models.CharField(max_length=100, null=False, blank=False)
     description = models.TextField(null=False, blank=False)
 
+    def __str__(self):
+        return self.title
 
 class  Expert(models.Model):
     image = models.ImageField(null=False, blank=False)
     name = models.CharField(max_length=50, null=False, blank=False)
     position = models.CharField(max_length=100, null=False, blank=False)
+
+    def __str__(self):
+        return self.name
+
