@@ -46,10 +46,10 @@
                           <div class="panel-body">
                               <div class="accordion-content">
                               <dl class="dl-horizontal"> 
-                                <dt>Location</dt> <dd><i class="fa fa-map-marker"></i> 8th floor, 379 Hudson St, New York, NY 10018</dd> 
-                                <dt>Administration Phone Number</dt> <dd><i class="fa fa-phone"></i> (+1) 96 716 6879</dd> 
-                                <dt>FREE Hotline </dt> <dd><i class="fa fa-phone"></i>  (+84) 946 716 4545</dd> 
-                                <dt>E-mail</dt> <dd><i class="fa fa-envelope-o"></i> contact@finance.com</dd> 
+                                <dt>Location</dt> <dd><i class="fa fa-map-marker"></i> {{ contact.location }}</dd> 
+                                <dt>Administration Phone Number</dt> <dd><i class="fa fa-phone"></i> (+237) {{ contact.administration_phone_num }}</dd> 
+                                <!-- <dt>FREE Hotline </dt> <dd><i class="fa fa-phone"></i>  (+84) 946 716 4545</dd>  -->
+                                <dt>E-mail</dt> <dd><i class="fa fa-envelope-o"></i> {{ contact.email }}</dd> 
                               </dl>
                             </div>
                           </div>
@@ -65,10 +65,12 @@
                           <div class="panel-body">
                               <div class="accordion-content">
                               <dl class="dl-horizontal"> 
-                                <dt>Financial Analyst </dt> <dd><i class="fa fa-phone"></i> (+1) 96 734 6339</dd> 
-                                <dt>Lawyer</dt> <dd><i class="fa fa-phone"></i> (+1) 96 716 6879</dd> 
+                                {% for advisor in advisors %}
+                                  <dt>{{ advisor.position }} </dt> <dd><i class="fa fa-phone"></i> (+237) {{ advisor.phone_number }}</dd> 
+                                {% endfor %}
+                                  <!-- <dt>Lawyer</dt> <dd><i class="fa fa-phone"></i> (+1) 96 716 6879</dd> 
                                 <dt>Personal Financial Advisor </dt> <dd><i class="fa fa-phone"></i>  (+1) 96 716 6879</dd> 
-                                <dt>Investments Expert</dt> <dd><i class="fa fa-phone"></i> (+84) 946 726 4628</dd> 
+                                <dt>Investments Expert</dt> <dd><i class="fa fa-phone"></i> (+84) 946 726 4628</dd>  -->
                               </dl>
                             </div>
                           </div>
@@ -85,11 +87,13 @@
                               <div class="accordion-content">
                                 <p>Join us in social networks </p>
                                 <ul class="social social-dark social-bg-dark">
-                                  <li class="facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                  <li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                  {% for social in socials %}
+                                    <li class="{{social.name}}"><a href="{{social.link}}"><i class="fa fa-{{social.name}}"></i></a></li>
+                                  {% endfor %}
+                                  <!-- <li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
                                   <li class="google-plus"><a href="#"><i class="fa fa-google-plus"></i></a></li>
                                   <li class="youtube"><a href="#"><i class="fa fa-youtube-play"></i></a></li>
-                                  <li class="linkedin"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                  <li class="linkedin"><a href="#"><i class="fa fa-linkedin"></i></a></li> -->
                                 </ul>
                                  
                             </div>
