@@ -25,8 +25,8 @@ class ContactView(View):
         form = ContactForm(request.POST)
 
         if form.is_valid():
-            form.save()
-            return HttpResponseRedirect("/")
+            print(form.cleaned_data['user_name'],form.cleaned_data['email'],form.cleaned_data['phone_num'])
+            return HttpResponseRedirect("/contact")
 
         advisors = FinancialAdvisor.objects.all()
         contact = ContactInfo.objects.last()
