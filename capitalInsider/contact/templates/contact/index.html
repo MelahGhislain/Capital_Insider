@@ -106,7 +106,7 @@
     	</div> <!-- End col -->
     			<div class="col-md-5 right-contact">
     				<h4> Send Us a Message</h4>
-    				<form class="form-inline form-contact-finance form-contact-2" name="contact" method="POST" action="send_form_email.php">
+    				<form class="form-inline form-contact-finance form-contact-2" name="contact" method="POST">
                   
                   {% csrf_token %}
 
@@ -140,7 +140,9 @@
    
    	<!-- Section Google Map -->
    	<div class="no-padding ">
-   		<div id="map-canvas" class="margin-top-15"></div>
+   		<div id="map-canvas" class="margin-top-15">
+         <iframe src="" frameborder="0" allowfullscreen></iframe>
+       </div>
    	</div>
    	<!-- End Section -->
 

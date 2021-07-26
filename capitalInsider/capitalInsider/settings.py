@@ -137,3 +137,19 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'images')
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# visite this sites for more infor
+# myaccount.google.com/lesssecureapps
+# myaccount.google.com/DisplayUnlockCaptcha
+# myaccount.google.com/lapppaswords
+
+# Email settings
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = '587'
+EMAIL_HOST_USER = 'melahghislain17@gmail.com' # my email adress
+EMAIL_HOST_PASSWORD = '*******' # gmail password
+EMAIL_USE_TLS = True
+
+# EMAIL_USE_SSL = False
+

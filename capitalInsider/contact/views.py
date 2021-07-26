@@ -3,6 +3,7 @@ from .models import FinancialAdvisor, ContactInfo, SocialNetwork
 from .forms import ContactForm
 from django.views import View
 from django.http import  HttpResponseRedirect
+from django.core.mail import  send_mail
 
 
 # Create your views here.
@@ -25,8 +26,18 @@ class ContactView(View):
         form = ContactForm(request.POST)
 
         if form.is_valid():
-            form.save()
-            return HttpResponseRedirect("/")
+            username = form.cleaned_data['user_name']
+            email = form.cleaned_data['email']
+            number = form.cleaned_data['phone_num']
+            message = form.cleaned_data['message']
+            send_mail(
+                username, # subject
+                message, # message
+                email, # from email
+                ["melahghislain17@gmail.com"], # to email
+            )
+            
+            return HttpResponseRedirect("/contact")
 
         advisors = FinancialAdvisor.objects.all()
         contact = ContactInfo.objects.last()
