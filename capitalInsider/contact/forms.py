@@ -38,3 +38,7 @@ class ContactForm(forms.ModelForm):
                 'rows': "6"
                 }),
        }
+
+
+class ContactForm(forms.ModelForm):
+    pass
