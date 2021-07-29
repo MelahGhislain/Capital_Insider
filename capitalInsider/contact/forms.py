@@ -1,5 +1,5 @@
 from django import forms
-from .models import MailUs
+from .models import MailUs, Map
 
 
 class ContactForm(forms.ModelForm):
@@ -40,5 +40,7 @@ class ContactForm(forms.ModelForm):
        }
 
 
-class ContactForm(forms.ModelForm):
-    pass
+class MapForm(forms.ModelForm):
+    class Meta:
+        model = Map
+        fields = ("location")
