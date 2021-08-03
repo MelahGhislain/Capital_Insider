@@ -43,4 +43,14 @@ class ContactForm(forms.ModelForm):
 class MapForm(forms.ModelForm):
     class Meta:
         model = Map
-        fields = ("location")
+        fields = ("location",)
+        widgets = {
+            'location': forms.TextInput(attrs={
+                'class': 'form-control',
+                'id': 'yourLocation',
+                'name': 'yourLocation',
+                'placeholder': 'Your location',
+                }),  
+       }
+
+

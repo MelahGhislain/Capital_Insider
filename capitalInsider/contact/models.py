@@ -29,5 +29,8 @@ class MailUs(models.Model):
 class Map(models.Model):
     location = models.CharField(max_length=200)
     destination = models.CharField(max_length=200)
-    distance = models.DecimalField()
+    distance = models.DecimalField(decimal_places=2, max_digits=10000)
     created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.location
