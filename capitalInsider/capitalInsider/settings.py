@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     #'home.apps.HomeConfig',
+    # 'crispy_forms'
     'home',
     'services',
     'projects',
@@ -108,6 +109,9 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+
+# CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
@@ -132,6 +136,8 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 MEDIA_ROOT = os.path.join(BASE_DIR, 'images')
+
+GEOIP_PATH = os.path.join(BASE_DIR, 'geoip')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

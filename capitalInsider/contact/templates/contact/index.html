@@ -2,6 +2,7 @@
 
 {% load static %}
 
+
 {% block title %}
     <h2>Contact Us</h2>
 {% endblock %}
@@ -140,9 +141,30 @@
    
    	<!-- Section Google Map -->
    	<div class="no-padding ">
-   		<div id="map-canvas" class="margin-top-15">
-         <iframe src="" frameborder="0" allowfullscreen></iframe>
-       </div>
+      <h4> Enter your location</h4>
+      <form class="form-inline form-contact-finance form-contact-2" name="location" method="POST">
+            
+            {% csrf_token %}
+
+            <div class="row">
+              <div class="form-group col-sm-12">
+                {{ map_form }}
+                <!-- <input type="text" class="form-control" name="yourName" id="yourName" placeholder="Your Name"> -->
+              </div>
+
+              <button class="ot-btn large-btn btn-rounded  btn-main-color btn-submit">Get direction</button>
+            </div>
+            
+       </form> <!-- End Form -->
+       {{ map|safe }}
+   		<!-- <div id="map-canvas" class="margin-top-15">
+         This product includes GeoLite2 data created by MaxMind, available from
+         
+         <a href="https://www.maxmind.com">https://www.maxmind.com</a>.
+         <iframe src="" frameborder="0" allowfullscreen>
+          {{ map|safe }}
+         </iframe>
+       </div> -->
    	</div>
    	<!-- End Section -->
 
