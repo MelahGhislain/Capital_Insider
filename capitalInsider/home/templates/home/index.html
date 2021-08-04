@@ -204,54 +204,16 @@
                     </div><!-- End owl button -->
 
                     <div id="owl-project" class="owl-carousel owl-theme  owl-project clearfix">
-                        <div class="item">
-                                <a href="projectsDetail.html">
-                                <img src="{% static 'images/Project/1.jpg' %}" class="img-responsive" alt="Image">
-                                <h5 class="title-project">Enterprise Loan</h5>
-                                </a>
-                        </div>
-                        <div class="item">
-                                <a href="projectsDetail.html">
-                                <img src="{% static 'images/Project/2.jpg' %}" class="img-responsive" alt="Image">
-                                <h5 class="title-project">Money Market</h5>
-                                </a>
-                        </div>
-                        <div class="item">
-                                <a href="projectsDetail.html">
-                                <img src="{% static 'images/Project/3.jpg' %}" class="img-responsive" alt="Image">
-                                <h5 class="title-project">MO Insurance </h5>
-                                </a>
-                        </div>
-                        <div class="item">
-                                <a href="projectsDetail.html">
-                                <img src="{% static 'images/Project/5.jpg' %}" class="img-responsive" alt="Image">
-                                <h5 class="title-project">Business Loan</h5>
-                                </a>
-                        </div>
-                        <div class="item">
-                                <a href="projectsDetail.html">
-                                <img src="{% static 'images/Project/6.jpg' %}" class="img-responsive" alt="Image">
-                                <h5 class="title-project">Financial Report</h5>
-                                </a>
-                        </div>
-                        <div class="item">
-                                <a href="projectsDetail.html">
-                                <img src="{% static 'images/Project/7.jpg' %}" class="img-responsive" alt="Image">
-                                <h5 class="title-project">2016 Retirement Plan</h5>
-                                </a>
-                        </div>
-                        <div class="item">
-                                <a href="projectsDetail.html">
-                                <img src="{% static 'images/Project/8.jpg' %}" class="img-responsive" alt="Image">
-                                <h5 class="title-project">Business Growth Solutions</h5>
-                                </a>
-                        </div>
-                        <div class="item">
-                                <a href="projectsDetail.html">
-                                <img src="{% static 'images/Project/9.jpg' %}" class="img-responsive" alt="Image">
-                                <h5 class="title-project">Insurance Life</h5>
-                                </a>
-                        </div>
+
+                        {% for project in projects %}
+                            <div class="item">
+                                    <a href="{{ project.get_absolute_url }}">
+                                    <img src="{{ project.main_image.url }}" class="img-responsive" alt="Image">
+                                    <h5 class="title-project">{{ project.title|title }}</h5>
+                                    </a>
+                            </div>
+                        {% endfor %}
+
                     </div> <!--End Owl  -->
                 </div><!-- End Col -->
             </div><!-- End Row -->
@@ -312,112 +274,24 @@
                         </div><!-- End owl custom button -->  
                         <div class="padding-bottom-15"></div>
                         <div id="owl-experts" class="owl-carousel owl-theme owl-experts clearfix">
-                        <div class="item item-experts text-center">
-                            <div class="expert-img-container">
-                                <div class="avatar">
-                                <img src="{% static 'images/Experts/1.jpg' %}" class="img-responsive" alt="Image">
-                                </div>
-                                <a href="https://www.linkedin.com/" class="in-experts">
-                                    <i class="fa fa-linkedin"></i>
-                                </a>
-                            </div> <!-- end expert img container -->
-                            
+                            {% for expert in experts %}
+                                <div class="item item-experts text-center">
+                                    <div class="expert-img-container">
+                                        <div class="avatar">
+                                        <img src="{{ expert.image.url }}" class="img-responsive" alt="Image">
+                                        </div>
+                                        <!-- <a href="https://www.linkedin.com/" class="in-experts">
+                                            <i class="fa fa-linkedin"></i>
+                                        </a> -->
+                                    </div> <!-- end expert img container -->
+                                    
 
-                            <div class="clearfix"></div>
-                            <h4 class="">Peter Hart</h4>
-                            <p class="job-experts">Chartered Financial Advisor</p>
-                        </div><!-- end item -->
-                        <div class="item item-experts text-center">
-                            <div class="expert-img-container">
-                                <a href="https://www.linkedin.com/" class="in-experts">
-                                    <i class="fa fa-linkedin"></i>
-                                </a>
-                                <div class="avatar">
-                                <img src="{% static 'images/Experts/2.jpg' %}" class="img-responsive" alt="Image">
-                                </div>
-                            </div> <!-- end expert img container -->
-                            <div class="clearfix"></div>
-                            <h4 class="">Betty Lane</h4>
-                            <p class="job-experts">Chartered Financial Advisor</p>
-                        </div><!-- end item -->
-                        <div class="item item-experts text-center">
-                            <div class="expert-img-container">
-                                <a href="https://www.linkedin.com/" class="in-experts">
-                                    <i class="fa fa-linkedin"></i>
-                                </a>
-                                <div class="avatar">
-                                <img src="{% static 'images/Experts/3.jpg' %}" class="img-responsive" alt="Image">
-                                </div>
-                            </div> <!-- end expert img container -->
-                            <div class="clearfix"></div>
-                            <h4 class="">Richard Pierce</h4>
-                            <p class="job-experts">Certified Public Accountant</p>
-                        </div><!-- end item -->
-                        <div class="item item-experts text-center">
-                            <div class="expert-img-container">
-                                <a href="https://www.linkedin.com/" class="in-experts">
-                                    <i class="fa fa-linkedin"></i>
-                                </a>
-                                <div class="avatar">
-                                <img src="{% static 'images/Experts/4.jpg' %}" class="img-responsive" alt="Image">
-                                </div>
-                            </div> <!-- end expert img container -->
-                            <div class="clearfix"></div>
-                            <h4 class="">Janice Rose</h4>
-                            <p class="job-experts">Registered Tax Preparer</p>
-                        </div><!-- end item -->
-                        <div class="item item-experts text-center">
-                            <div class="expert-img-container">
-                                <a href="https://www.linkedin.com/" class="in-experts">
-                                    <i class="fa fa-linkedin"></i>
-                                </a>
-                                <div class="avatar">
-                                <img src="{% static 'images/Experts/5.jpg' %}" class="img-responsive" alt="Image">
-                                </div>
-                            </div> <!-- end expert img container -->
-                            <div class="clearfix"></div>
-                            <h4 class="">Peter Hart</h4>
-                            <p class="job-experts">Chartered Financial Advisor</p>
-                        </div><!-- end item -->
-                        <div class="item item-experts text-center">
-                            <div class="expert-img-container">
-                                <a href="https://www.linkedin.com/" class="in-experts">
-                                    <i class="fa fa-linkedin"></i>
-                                </a>
-                                <div class="avatar">
-                                <img src="{% static 'images/Experts/6.jpg' %}" class="img-responsive" alt="Image">
-                                </div>
-                            </div> <!-- end expert img container -->
-                            <div class="clearfix"></div>
-                            <h4 class="">Betty Lane</h4>
-                            <p class="job-experts">Chartered Financial Advisor</p>
-                        </div><!-- end item -->
-                        <div class="item item-experts text-center">
-                            <div class="expert-img-container">
-                                <a href="https://www.linkedin.com/" class="in-experts">
-                                    <i class="fa fa-linkedin"></i>
-                                </a>
-                                <div class="avatar">
-                                <img src="{% static 'images/Experts/7.jpg' %}" class="img-responsive" alt="Image">
-                                </div>
-                            </div> <!-- end expert img container -->
-                            <div class="clearfix"></div>
-                            <h4 class="">Richard Pierce</h4>
-                            <p class="job-experts">Certified Public Accountant</p>
-                        </div><!-- end item -->
-                        <div class="item item-experts text-center">
-                            <div class="expert-img-container">
-                                <a href="https://www.linkedin.com/" class="in-experts">
-                                    <i class="fa fa-linkedin"></i>
-                                </a>
-                                <div class="avatar">
-                                <img src="{% static 'images/Experts/8.jpg' %}" class="img-responsive" alt="Image">
-                                </div>
-                            </div> <!-- end expert img container -->
-                            <div class="clearfix"></div>
-                            <h4 class="">Janice Rose</h4>
-                            <p class="job-experts">Registered Tax Preparer</p>
-                        </div><!-- end item -->
+                                    <div class="clearfix"></div>
+                                    <h4 class="">{{ expert.name|title}}</h4>
+                                    <p class="job-experts">{{ expert.position|title }}</p>
+                                </div><!-- end item -->
+                        {% endfor %}
+
                         </div> <!-- End owl container -->
                     </div> <!-- End col -->
                 </div><!-- End row -->
@@ -464,60 +338,16 @@
                 <a class="btn next-partners"><i class="fa fa-angle-right"></i></a>
                 </div><!-- End owl button -->
 
-                    <div id="owl-partners" class="owl-carousel owl-theme owl-partners clearfix">
-                <div class="item">
-                    <a href="#">
-                        <img src="{% static 'images/Partner/1.jpg' %}" class="img-responsive" alt="Image">
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="#">
-                        <img src="{% static 'images/Partner/2.jpg' %}" class="img-responsive" alt="Image">
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="#">
-                        <img src="{% static 'images/Partner/3.jpg' %}" class="img-responsive" alt="Image">
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="#">
-                        <img src="{% static 'images/Partner/4.jpg' %}" class="img-responsive" alt="Image">
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="#">
-                        <img src="{% static 'images/Partner/5.jpg' %}" class="img-responsive" alt="Image">
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="#">
-                        <img src="{% static 'images/Partner/1.jpg' %}" class="img-responsive" alt="Image">
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="#">
-                        <img src="{% static 'images/Partner/2.jpg' %}" class="img-responsive" alt="Image">
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="#">
-                        <img src="{% static 'images/Partner/3.jpg' %}" class="img-responsive" alt="Image">
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="#">
-                        <img src="{% static 'images/Partner/4.jpg' %}" class="img-responsive" alt="Image">
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="#">
-                        <img src="{% static 'images/Partner/5.jpg' %}" class="img-responsive" alt="Image">
-                    </a>
-                </div> 
-                </div>
-
-                    </div><!-- End row partners -->
+                <div id="owl-partners" class="owl-carousel owl-theme owl-partners clearfix">
+                {% for partner in partners %}
+                    <div class="item">
+                        <a href="{% if partner.link %} {{ partner.link }} {% endif %}">
+                            <img src="{{ partner.logo.url }}" class="img-responsive" alt="Image">
+                        </a>
+                    </div>
+                {% endfor %}
+            
+                </div><!-- End row partners -->
                 </div><!-- End Row -->
             </div>
             </section><!-- End container -->
