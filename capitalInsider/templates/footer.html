@@ -10,7 +10,7 @@
                 <a href="{% url 'home' %}"><img src="{% static 'images/Footer/logo-footer.png' %}" class="img-responsive" alt="Image"></a>                    
                 <ul class="clearfix">
                   {% if titles %}
-                    {% for title in titles %}
+                    {% for title in titles|slice:":6" %}
                       <li><a href="{% url 'service-detail' title.id %}">{{ title.title|title }}</a></li>
                     {% endfor %}
                   {% endif %}

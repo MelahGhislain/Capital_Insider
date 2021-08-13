@@ -4,7 +4,7 @@ from contact.models import ContactInfo, SocialNetwork
 
 
 def services_context_processor(request):
-    services = Services.objects.all()[:6]
+    services = Services.objects.all()#[:6]
     titles = map(lambda service: {"id": service.id,
                  "title":  service.title}, services)
     return {
@@ -13,7 +13,7 @@ def services_context_processor(request):
 
 
 def contact_info_context_processor(request):
-    contact_info = ContactInfo.objects.all()[0]
+    contact_info = ContactInfo.objects.all()#[0]
     social_icons = SocialNetwork.objects.all()
 
     return {
