@@ -30,7 +30,9 @@
                   </div>
               </div>  <!-- End col slidebar -->
               <div class="col-md-9 services-detail-content">
+               {% if service.image %}
                 <img src="{{ service.image.url }}" class="img-responsive img-header-detail" alt="Image">
+               {% endif %}
                
                   <div class="h-block">
                       <h3>{{  service.title|title }}</h3>
