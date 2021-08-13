@@ -6,3 +6,7 @@ from django.views import View
 class NewsView(View):
     def get(self, request):
         return render(request, 'news/index.html')
+
+class NewsDetailView(View):
+    def get(self, request, id):
+        return render(request, 'news/news_detail.html')
