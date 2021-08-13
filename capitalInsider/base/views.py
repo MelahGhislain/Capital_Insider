@@ -4,9 +4,12 @@ from contact.models import ContactInfo, SocialNetwork
 
 # Create your views here.
 def footer(request):
-    titles = Services.objects.get("title")
+    services = Services.objects.all()[:6]
+    print(f"===================>>>>> {services}")
+    titles = map(lambda service: {service.id, service.title } , services)
     contact_info = ContactInfo.objects.all()
     social_icons = SocialNetwork.objects.all()
+
     context = {
         "titles": titles,
         "contact_info": contact_info,
