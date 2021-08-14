@@ -41,14 +41,31 @@
                       </main> <!-- End Main -->
                       <div class="col-md-12 text-center clearfix">
                         <ul class="pagination pagination-finance">
-                            <li><a class="current" href="#">1</a></li>
-                            <li><a href="#">2</a></li>
+                            {% if news.has_previous %}
+                            <li><a class="" href="?page=1">1</a></li>
+                            <!-- <a href="?page=1">&laquo; first</a> -->
+                            <li><a href="?page={{ news.previous_page_number }}">&laquo;</a></li>
+                            {% endif %}
+                            <!-- <span class="current">
+                                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                            </span> -->
+                            <!-- <li><a>Page</a></li>
+                            <li><a class="current">{{ news.number }}</a></li>
+                            <li style="text-align: center;">of</li>
+                            <li><a>{{ news.paginator.num_pages }}</a></li> -->
+                            <li>Page {{ news.number }} of {{ news.paginator.num_pages }}.</li>
+                            
+                            {% if news.has_next %}
+                                <li><a href="?page={{ news.next_page_number }}">&raquo;</a></li>
+                                <li><a href="?page={{ news.paginator.num_pages }}">{{ news.paginator.num_pages }}</a></li>
+                            {% endif %}
+                            <!-- <li><a href="#">2</a></li>
                             <li><a href="#">3</a></li>
                             <li><a href="#">4</a></li>
                             <li><a href="#">5</a></li>
                              <li class="threedots">...</li>
                               <li><a href="#">25</a></li>
-                            <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i></a></li> -->
                           </ul>
                       </div>
               </div>
@@ -58,9 +75,10 @@
                 <aside class="widget widget_text">
                     <h3 class="widget-title">About</h3>
                     <div class="textwidget">
-                        <p>Nulla eleifend, sapien eget porttitor maximus, nisl ante convallis dolor, nec consequat felis ex a ex. Vestibulum, vitae fringilla nibh consectetur. Integer at volutpat augue.
-                        </p>                              
+                        <p>{{ about.description|slice:":200" }} ...</p>                              
+                        <a class="continueReading" href="{% url 'about' %}">More about us</a>
                     </div>
+                    
                 </aside>
   
                 <aside id="categories-2" class="widget widget_categories">
@@ -86,37 +104,12 @@
                 <aside class="widget widget_Archive">
                   <h3 class="widget-title">Archive</h3>
                   <ul>
-                    <li><a href="#">March 2016</a>
-                        <span class="count">(4)</span>
-                    </li>
-                    <li><a href="#">Febuary 2016</a>
-                        <span class="count">(9)</span>
-  
-                    </li>
-                    <li><a href="#">January 2016</a>
-                        <span class="count">(34)</span>
-  
-                    </li>
-                    <li><a href="#">December 2015</a>
-                        <span class="count">(22)</span>
-  
-                    </li>
-                    <li><a href="#">November 2015</a>
-                        <span class="count">(35)</span>
-  
-                    </li>
-                     <li><a href="#">Octorber 2015</a>
-                        <span class="count">(4)</span>
-  
-                    </li>
-                     <li><a href="#">September 2015</a>
-                        <span class="count">(26)</span>
-  
-                    </li>
-                     <li><a href="#">August</a>
-                        <span class="count">(11)</span>
-  
-                    </li>
+                    {% for date_data in archive %}
+                        <li><a href="#">{{date_data.date}}</a>
+                            <!-- <span class="count">(4)</span> -->
+                        </li>
+                    {% endfor %}
+                    
                   </ul> <!-- End Ul -->
                 </aside>
   
