@@ -9,14 +9,15 @@ class CommentForm(forms.ModelForm):
         widgets = {
             'name': forms.TextInput(attrs={
                 'class': 'form-control',
-                'id': 'yourName',
-                'name': 'yourName',
+                'id': 'inputName',
+                'type': "text",
                 'placeholder': 'Your Name',
+                'required': "required",
                 }),
-            'comment': forms.Textarea(attrs={
+            'message': forms.Textarea(attrs={
                 'class': 'form-control',
                 'id': 'textarea',
-                'name': 'comments',
-                'rows': "6"
+                'required': "required",
+                'rows': "5"
                 }),
        }

@@ -4,6 +4,7 @@ from django.views import View
 # from django.views.generic import ListView
 from .models import News, Comment
 from about.models import AboutUs
+from .forms import CommentForm
 
 # Create your views here.
 class NewsView(View):
@@ -32,7 +33,18 @@ class NewsView(View):
 class NewsDetailView(View):
     def get(self, request, id):
         news = News.objects.get(id=id)
+        news_odj = News.objects.all() # get news except for current news
+        comment_form = CommentForm()
         context = {
             'news': news,
+            'news_odj': news_odj,
+            'comment_form': comment_form,
         }
         return render(request, 'news/news_detail.html', context)
+
+    def post(self, request):
+        form = CommentForm(request.POST)
+
+        if form.is_valid():
+            pass
+            # form.save()
