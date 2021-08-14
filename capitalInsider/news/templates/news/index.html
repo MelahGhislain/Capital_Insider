@@ -21,22 +21,23 @@
               <div id="primary" class="content-area col-md-9 no-padding-right">
                       
                       <main id="main" class="site-main padding-top-50" >
+                          {% for article in news %}
                           <article class="item-lastest-news itemBlogList">
-                              <a href="blogDetail.html" class="img-news-container">
-                                <img src="{% static 'images/Blog/b1.jpg' %}" class="img-responsive" alt="Image">
+                              <a href="{% url 'news-detail' article.id %}" class="img-news-container">
+                                <img src="{{ article.image.url }}" class="img-responsive" alt="Image">
                               </a>
                               <div class="news-text-container">
-                                <a href="blogDetail.html"><h3 class="title-news">Plans for growing businesses</h3></a>
+                                <a href="{% url 'news-detail' article.id %}"><h3 class="title-news">{{ article.title }}</h3></a>
                                  <div class="latest-news-data">
-                                    <!-- <span class="tags"><a href="blogDetail.html">Financial</a>, <a href="blogDetail.html"> Maketing</a></span> -->
-                                    <span class="dates">March 22,2016</span>
+                                    <!-- <span class="tags"><a href="{% url 'news-detail' article.id %}">{{ article.category }}</a></span> -->
+                                    <span class="dates">{{ article.date }}</span>
                                 </div>
-                                <p> Nulla eleifend, sapien eget porttitor maximus, nisl ante convallis dolor, nec consequat felis ex a ex. Etiam vestibulum enim euismod dui vestibulum, vitae fringilla nibh consectetur. Integer at volutpat augue. Donec consectetur, est nec laoreet scelerisque, lacus nulla fermentum odio, ut accumsan enim ipsum a justo. Interdum et malesuada fames ac ante ipsum primis in faucibus. </p>
+                                <p> {{ article.news_detail|slice:":250" }} .... </p>
                                
-                                <a class="continueReading" href="blogDetail.html">Continue Reading</a>
+                                <a class="continueReading" href="{% url 'news-detail' article.id %}">Continue Reading</a>
                               </div> <!-- End Text box -->
                           </article><!-- End Arcicle -->
-                          
+                          {% endfor %}
                       </main> <!-- End Main -->
                       <div class="col-md-12 text-center clearfix">
                         <ul class="pagination pagination-finance">
@@ -62,22 +63,16 @@
                     </div>
                 </aside>
   
-                <!-- <aside class="widget widget_search">
-                    <form action="_POST" class="search-form" method="get" role="search">
-                        <input name="s" value="" placeholder="Search …" class="search-field" type="search">   
-                        <button class="search-submit" type="submit"><i class="fa fa-search"></i></button>
-                    </form>
-                </aside> -->
                 <aside id="categories-2" class="widget widget_categories">
                     <h3 class="widget-title" >Categories</h3>
   
-                    <ul>
-                      <li><a href="#">Business Market</a></li>
-                      <li><a href="#">Socials Network</a></li>
-                      <li><a href="#">Team Work</a></li>
-                      <li><a href="#">Rebuild Services</a></li>
-                      <li><a href="#">Electrical System</a></li>
-                    </ul> <!-- End Ul -->
+                    <!-- <ul>
+                        {% for news_category in news %}
+                            <li><a href="#">{{ news_category.category|title }}</a></li>
+                        {% endfor %}
+                      
+                    </ul>  -->
+                    <!-- End Ul -->
                 </aside>
   
                 <aside class="promotion clearboth">

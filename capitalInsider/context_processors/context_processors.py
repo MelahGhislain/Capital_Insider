@@ -13,7 +13,7 @@ def services_context_processor(request):
 
 
 def contact_info_context_processor(request):
-    contact_info = ContactInfo.objects.all()#[0]
+    contact_info = ContactInfo.objects.first()#[0]
     social_icons = SocialNetwork.objects.all()
 
     return {
