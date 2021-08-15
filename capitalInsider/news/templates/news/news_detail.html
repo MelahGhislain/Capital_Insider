@@ -36,7 +36,7 @@
               alt="Image"
             />
             <!-- <h4>Context of Business</h4> -->
-            <p>
+            <p style="margin-bottom:25px;">
               {{news.news_detail}}
             </p>
             <!-- <br />
@@ -96,154 +96,116 @@
           </div> -->
           <div class="line"></div>
           <div class="entry_post_navigation">
-            
+            {% if page_obj.has_previous %}
             <div class="preview_entry_post">
-              <a href="#">
+              <a href="{% url 'news-detail' page_obj.previous_page_number %}">
                 <span
                   ><i class="fa fa-angle-double-left" aria-hidden="true"></i>
                   PREVIEW</span
                 >
-                <h3>Plans for growing businesses</h3>
+                <h3>{{ previous_page_title }}</h3>
               </a>
             </div>
+            {% endif %}
+
+            {% if page_obj.has_next%}
             <div class="next_entry_post">
-              <a href="#">
+              <a href="{% url 'news-detail' page_obj.next_page_number %}">
                 <span
                   >NEXT
                   <i class="fa fa-angle-double-right" aria-hidden="true"></i>
                 </span>
-                <h3>Help you planning for your retirement</h3>
+                <h3>{{ next_page_title }}</h3>
               </a>
             </div>
+            {% endif %}
+            
           </div>
           <!-- End entry Post Navigation -->
-          <div class="line"></div>
-          <div id="comments" class="comments-area">
-            <h2 class="comments-title">3 Comments</h2>
-            <ol class="comment-list">
-              <li class="comment">
-                <div class="comment-body">
-                  <div class="comment-meta">
-                    <div class="comment-author vcard">
-                      <a href="#"
-                        ><img
-                          alt=""
-                          src="images/Testimonials/1.jpg"
-                          class="avatar photo avatar-default"
-                      /></a>
-                    </div>
-                  </div>
-                  <div class="comment-content">
-                    <p>
-                      Nunc risus ex, tempus quis purus ac, tempor consequat ex.
-                      Vivamus sem magna, maximus at est id, maximus aliquet
-                      nunc. Suspendisse lacinia velit a eros porttitor, in
-                      interdum ante faucibus.
-                    </p>
-                    <cite class="fn"
-                      ><a href="" rel="external nofollow" class="url"
-                        >Angela Allen</a
-                      ></cite
-                    >
-                    -
-                    <a href="" class="comment-date">
-                      <span>March 30, 2016</span>
-                    </a>
-                    <div class="reply">
-                      <a
-                        rel="nofollow"
-                        class="comment-reply-link"
-                        href=""
-                        onclick=""
-                        aria-label=""
-                        ><i class="fa fa-share" aria-hidden="true"></i> Reply</a
-                      >
-                    </div>
-                  </div>
-                </div>
-                <!-- End comment body -->
-
-                <ol class="children last-comment">
-                  <li class="comment">
-                    <div class="comment-body">
-                      <div class="comment-meta commentmetadata">
-                        <div class="comment-author vcard">
-                          <img
-                            alt=""
-                            src="images/Testimonials/2.jpg"
-                            class="avatar photo avatar-default"
-                          />
+          {% if comments %}
+              <div class="line"></div>
+              <div id="comments" class="comments-area">
+                <h2 class="comments-title">
+                  {% if comments.count  <= 1 %}
+                    {{ num_of_comments }} Comment
+                  {% else %}
+                    {{ num_of_comments }} Comments
+                  {% endif %}
+                </h2>
+                <ol class="comment-list">
+                  
+                {% for comment in comments %}
+                      
+                      <li class="comment last-comment">
+                        <div class="comment-body">
+                          <!-- <div class="comment-meta commentmetadata">
+                            <div class="comment-author vcard">
+                              <img
+                                alt=""
+                                src="images/Testimonials/1.jpg"
+                                class="avatar photo avatar-default"
+                              />
+                            </div>
+                          </div> -->
+                          <div class="comment-content" style="overflow-wrap:break-word;">
+                            <p>
+                            {{ comment.message }}
+                            </p>
+                            <cite class="fn"
+                              ><a rel="external nofollow" class="url"
+                                >{{ comment.name }}</a
+                              ></cite
+                            >
+                            -
+                            <a href="" class="comment-date">
+                              <span>{{ comment.date }}</span>
+                            </a>
+                            <!-- <div class="reply">
+                              <a
+                                rel="nofollow"
+                                class="comment-reply-link"
+                                href=""
+                                onclick=""
+                                aria-label=""
+                                ><i class="fa fa-share" aria-hidden="true"></i> Reply</a
+                              >
+                            </div> -->
+                          </div>
                         </div>
-                      </div>
-                      <div class="comment-content">
-                        <p>
-                          Nullam ipsum urna, dapibus sed justo sed, imperdiet
-                          malesuada commodo, eros eleifend laoreet fringilla,
-                        </p>
-                        <cite class="fn"
-                          ><a href="" rel="external nofollow" class="url"
-                            >Angela Allen</a
-                          ></cite
-                        >
-                        -
-                        <a href="" class="comment-date">
-                          <span>March 30, 2016</span>
-                        </a>
-                      </div>
-                    </div>
-                    <!-- End comment body -->
-                  </li>
-                  <!-- #comment-## -->
+                        <!-- End comment body -->
+                      </li>
+                {% endfor %}
                 </ol>
-                <!-- .children -->
-              </li>
-              <li class="comment last-comment">
-                <div class="comment-body">
-                  <div class="comment-meta commentmetadata">
-                    <div class="comment-author vcard">
-                      <img
-                        alt=""
-                        src="images/Testimonials/1.jpg"
-                        class="avatar photo avatar-default"
-                      />
-                    </div>
-                  </div>
-                  <div class="comment-content">
-                    <p>
-                      Nunc risus ex, tempus quis purus ac, tempor consequat ex.
-                      Vivamus sem magna, maximus at est id, maximus aliquet
-                      nunc. Suspendisse lacinia velit a eros porttitor, in
-                      interdum ante faucibus.
-                    </p>
-                    <cite class="fn"
-                      ><a href="" rel="external nofollow" class="url"
-                        >Angela Allen</a
-                      ></cite
+              </div>
+              <!-- Comments Area -->
+              <div class="entry_post_navigation">
+                {% if comments.has_previous %}
+                <div class="preview_entry_post">
+                  <a href="?comment={{ comments.previous_page_number }}">
+                    <span
+                      ><i class="fa fa-angle-double-left" aria-hidden="true"></i>
+                      PREVIEW</span
                     >
-                    -
-                    <a href="" class="comment-date">
-                      <span>March 30, 2016</span>
-                    </a>
-                    <div class="reply">
-                      <a
-                        rel="nofollow"
-                        class="comment-reply-link"
-                        href=""
-                        onclick=""
-                        aria-label=""
-                        ><i class="fa fa-share" aria-hidden="true"></i> Reply</a
-                      >
-                    </div>
-                  </div>
+                  </a>
                 </div>
-                <!-- End comment body -->
-              </li>
-            </ol>
-          </div>
-          <!-- Comments Area -->
+                {% endif %}
 
+                {% if comments.has_next%}
+                <div class="next_entry_post">
+                  <a href="?comment={{ comments.next_page_number }}">
+                    <span
+                      >NEXT
+                      <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                    </span>
+                  </a>
+                </div>
+                {% endif %}
+                
+              </div>
+              <!-- End entry Post Navigation -->
+          {% endif %}
           <div id="respond" class="comment-respond">
-            <h3 id="reply-title" class="comment-reply-title">Leave a Reply</h3>
+            <h3 id="reply-title" class="comment-reply-title">Leave a comment</h3>
             <form
               method="post"
               id="commentform"
@@ -262,6 +224,7 @@
                   {{ comment_form.message }}
                 </div>
               </div>
+              <input type="text" value="{{ news.id }}" style="display:none;" name="news_id">
               <!-- End row -->
               <p class="form-submit">
                 <button
