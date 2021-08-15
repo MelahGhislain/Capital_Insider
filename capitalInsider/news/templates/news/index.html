@@ -97,7 +97,6 @@
                   <img src="{% static 'images/Blog/promotion.jpg'%}" class="img-responsive" alt="Image">
                   <div class="promotionText">
                       <p>Amazing Theme! You can customize it very easy to fit your needs.</p>
-                      <a href="" class="btn btn-buy-now"> Buy Now</a>
                   </div>
                 </aside><!-- End promotion -->
   
@@ -105,7 +104,7 @@
                   <h3 class="widget-title">Archive</h3>
                   <ul>
                     {% for date_data in archive %}
-                        <li><a href="#">{{date_data.date|date:"M"}}</a>
+                        <li><a href="?month={{date_data.date }}">{{date_data.date|date:"F d"}}</a>
                             <!-- <span class="count">(4)</span> -->
                         </li>
                     {% endfor %}
