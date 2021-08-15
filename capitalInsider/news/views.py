@@ -33,6 +33,8 @@ class NewsView(View):
 class NewsDetailView(View):
     def get(self, request, id):
         news = News.objects.get(id=id)
+        comments = news.comments.all()
+        print(comments)
         news_odj = News.objects.all() # get news except for current news
         comment_form = CommentForm()
         context = {
