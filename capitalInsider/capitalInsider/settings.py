@@ -75,6 +75,7 @@ TEMPLATES = [
                 'context_processors.context_processors.services_context_processor',
                 'context_processors.context_processors.contact_info_context_processor',
                 'context_processors.context_processors.current_year_context_processor',
+                'context_processors.context_processors.projects_context_processor',
             ],
         },
     },

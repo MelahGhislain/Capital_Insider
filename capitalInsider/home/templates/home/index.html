@@ -16,55 +16,29 @@
                 <div class="row"> 
                 <div class="services-home-1">
                     
-                    <div class="col-md-4">
-                    <div class="item-blog">
-                        <div class="thumbnail">
-                            <a href="blogDetail.html" class="img-blog-contain"><img src="images/Blog/1.jpg" alt=""></a>
-                            <div class="caption">
-                            <a href="blogDetail.html"><h4>Start A Good Plan</h4></a>
-                            <p>
-                            Phasellus lorem enim, luctus ut velit eget, convallis egestas eros. Sed ornare ligula eget tortor tempor, quis porta tellus dictum.
-                            </p>
-                            <a class="learn-more" href="blogDetail.html"><i class="fa fa-caret-right" aria-hidden="true"></i>Learn More
-                                
-                            </a>
+                    {% for blog in news|slice:":3" %}
+                        <div class="col-md-4">
+                            <div class="item-blog">
+                                <div class="thumbnail">
+                                    <a href="{% url 'news-detail' blog.id %}" class="img-blog-contain"><img src="{{ blog.image.url }}" alt=""></a>
+                                    <div class="caption">
+                                    <a href="{% url 'news-detail' blog.id %}"><h4>
+                                        {% if blog.title|length <= 32 %}
+                                            {{ blog.title|title }}
+                                        {% else %}
+                                            {{ blog.title|title|slice:":32" }} ...
+                                        {% endif %}
+                                    </h4></a>
+                                    <p>{{ blog.news_detail|slice:":200" }} ...</p>
+                                    <a class="learn-more" href="{% url 'news-detail' blog.id %}"><i class="fa fa-caret-right" aria-hidden="true"></i>Learn More
+                                        
+                                    </a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    </div>
-                
-                    <div class="col-md-4">
-                    <div class="item-blog">
-                        <div class="thumbnail">
-                            <a href="blogDetail.html" class="img-blog-contain"><img src="images/Blog/2.jpg" alt=""></a>
-                            <div class="caption">
-                                <a href="blogDetail.html"><h4>Experienced Experts</h4></a>
-                                <p>
-                                Phasellus lorem enim, luctus ut velit eget, convallis egestas eros. Sed ornare ligula eget tortor tempor, quis porta tellus dictum.
-                                </p>
-                                <a class="learn-more" href="blogDetail.html"><i class="fa fa-caret-right" aria-hidden="true"></i> Learn More
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-                    
-                    <div class="col-md-4">
-                    <div class="item-blog">
-                        <div class="thumbnail">
-                            <a href="blogDetail.html" class="img-blog-contain"><img src="images/Blog/3.jpg" alt=""></a>
-                            <div class="caption">
-                                <a href="blogDetail.html"><h4>Grow Your Financial</h4></a>
-                                <p>
-                            Phasellus lorem enim, luctus ut velit eget, convallis egestas eros. Sed ornare ligula eget tortor tempor, quis porta tellus dictum.
-                                </p>
-                                <a class="learn-more" href="blogDetail.html"><i class="fa fa-caret-right" aria-hidden="true"></i>Learn More
-                                
-                                </a>
-                            </div>
-                        </div>
-                    </div> 
-                    </div>
+                    {% endfor %}
+
                 </div>
 
                 </div> <!-- End Row 2 -->

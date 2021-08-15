@@ -72,9 +72,12 @@
                 <li>
                   <a href="{% url 'services' %}">Services</a>
                 </li>
-                <li>
-                  <a href="{% url 'projects' %}">Projects</a>
-                </li>
+                {% if ifProject %}
+                  <li>
+                    <a href="{% url 'projects' %}">Projects</a>
+                  </li>
+                {% endif %}
+                
                 <li>
                   <a href="{% url 'news' %}">News</a>
                 </li>
@@ -124,10 +127,10 @@
                     <a href="{% url 'services' %}">Services </a>
                       
                   </li>
-                 
-                  <li class="has-sub"><a href="{% url 'projects' %}">Projects </a>
-                         
-                  </li>
+                  {% if ifProject %}
+                    <li class="has-sub"><a href="{% url 'projects' %}">Projects </a></li>
+                  {% endif %}
+
                   <li class="has-sub">
                     <a href="{% url 'news' %}">News</i></a>
                        

@@ -49,96 +49,102 @@
                         </div>
                       </div><!-- End row -->
                   </div><!-- End H-block -->
-                  <div class="row">
-                    <div class="col-md-6 v-block">
-                      {% if service.cash_flow_statement %}
-                          <h3>Cash Flow Statement</h3>
-                          <div class="v-block-detail">
-                            <p>{{ service.cash_flow_statement }}</p>
-                          </div>
-                      
-                            <div class="chart-2 chart-2-v">
-                               
-                                <div style="" class="chart-v-item">
-                                    
-                                    <span class="percent-v update-v"></span>
-                                    <div class="progress  vertical bottom progress-v">
-                                        <div class="progress-bar bar-chart" role="progressbar" data-transitiongoal="90"></div>
+                  
+                 
+                        <div class="row">
+                          {% if service.cash_flow_statement or service.balance_sheet_statement or service.income_statement %}
+                            <div class="col-md-6 v-block">
+                              {% if service.cash_flow_statement %}
+                                  <h3>Cash Flow Statement</h3>
+                                  <div class="v-block-detail">
+                                    <p>{{ service.cash_flow_statement }}</p>
+                                  </div>
+                              
+                                    <div class="chart-2 chart-2-v">
+                                      
+                                        <div style="" class="chart-v-item">
+                                            
+                                            <span class="percent-v update-v"></span>
+                                            <div class="progress  vertical bottom progress-v">
+                                                <div class="progress-bar bar-chart" role="progressbar" data-transitiongoal="90"></div>
+                                            </div>
+                                            <span class="label-v">OPPORTUNITY</span>
+                                        </div>
+                                        <div style="" class="chart-v-item">
+                                            
+                                            <span class="percent-v update-v"></span>
+                                            <div class="progress  vertical bottom progress-v">
+                                                <div class="progress-bar bar-chart" role="progressbar" data-transitiongoal="85"></div>
+                                            </div>
+                                            <span class="label-v">SAVE TIME</span>
+                                        </div>
+                                        <div style="" class="chart-v-item">
+                                            
+                                            <span class="percent-v update-v"></span>
+                                            <div class="progress  vertical bottom progress-v">
+                                                <div class="progress-bar bar-chart" role="progressbar" data-transitiongoal="100"></div>
+                                            </div>
+                                            <span class="label-v">INCOME</span>
+                                        </div>
+                                    </div> <!-- End chart -->
+                              {% endif %}
+                            </div><!-- End Vblog -->
+                            <div class="col-md-6 v-block">
+                              {% if service.balance_sheet_statement %}
+                                  <h3>Balance Sheet</h3>
+                                  <div class="v-block-detail">
+                                    <p>{{ service.balance_sheet_statement }}</p>
+                                  </div>
+                              {% endif %}
+                            </div>  <!--  End col -->
+                            <div class="col-md-6 v-block">
+                              {% if service.income_statement %}
+                                  <h3>Income Statement</h3>
+                                    <div class="v-block-detail">
+                                      <p>{{ service.income_statement }}</p>
                                     </div>
-                                    <span class="label-v">OPPORTUNITY</span>
+                                {% endif %}
+                            </div> <!-- End col -->
+                          {% endif %}
+                        {% if service.brainstorming or service.plannification or service.hard_work or service.success %}
+                            <div class="tab-finance clearfix">
+                              <ul class="nav nav-tabs">
+                                {% if service.brainstorming %}
+                                  <li class="active"><a data-toggle="tab" href="#Brainstorming">Brainstorming</a></li>
+                                {% endif %}
+
+                                {% if service.plannification %}
+                                  <li><a data-toggle="tab" href="#Planification">Planification</a></li>
+                                {% endif %}
+
+                                {% if service.hard_work %}
+                                  <li><a data-toggle="tab" href="#WorkHard">Work Hard</a></li>
+                                {% endif %}
+                                {% if service.success %}
+                                <li><a data-toggle="tab" href="#Success">Success</a></li>
+                                {% endif %}
+                              </ul>
+
+                                <div class="tab-content">
+                                  <div id="Brainstorming" class="tab-pane fade in active">
+                                    <p>{{ service.brainstorming }}</p>
+                                  </div>
+                                  <div id="Planification" class="tab-pane fade">
+                                    <p>{{ service.plannification }}</p>
+                                  </div>
+                                  <div id="WorkHard" class="tab-pane fade">
+                                    <p>{{ service.hard_work }}</p>
+                                  </div>
+                                  <div id="Success" class="tab-pane fade">
+                                    <p>{{ service.success }}</p>
+                                  </div>
                                 </div>
-                                <div style="" class="chart-v-item">
-                                    
-                                    <span class="percent-v update-v"></span>
-                                    <div class="progress  vertical bottom progress-v">
-                                        <div class="progress-bar bar-chart" role="progressbar" data-transitiongoal="85"></div>
-                                    </div>
-                                    <span class="label-v">SAVE TIME</span>
-                                </div>
-                                <div style="" class="chart-v-item">
-                                    
-                                    <span class="percent-v update-v"></span>
-                                    <div class="progress  vertical bottom progress-v">
-                                        <div class="progress-bar bar-chart" role="progressbar" data-transitiongoal="100"></div>
-                                    </div>
-                                    <span class="label-v">INCOME</span>
-                                </div>
-                            </div> <!-- End chart -->
-                      {% endif %}
-                    </div><!-- End Vblog -->
-                    <div class="col-md-6 v-block">
-                      {% if service.balance_sheet_statement %}
-                          <h3>Balance Sheet</h3>
-                          <div class="v-block-detail">
-                            <p>{{ service.balance_sheet_statement }}</p>
-                          </div>
-                      {% endif %}
-                    </div>  <!--  End col -->
-                    <div class="col-md-6 v-block">
-                      {% if service.income_statement %}
-                           <h3>Income Statement</h3>
-                            <div class="v-block-detail">
-                              <p>{{ service.income_statement }}</p>
-                            </div>
+                            </div><!-- End tab -->
                         {% endif %}
-                    </div> <!-- End col -->
-                    
-                      <div class="tab-finance clearfix">
-                        <ul class="nav nav-tabs">
-                          {% if service.brainstorming %}
-                            <li class="active"><a data-toggle="tab" href="#Brainstorming">Brainstorming</a></li>
-                          {% endif %}
+                          <!-- End col -->      
 
-                          {% if service.plannification %}
-                            <li><a data-toggle="tab" href="#Planification">Planification</a></li>
-                          {% endif %}
-
-                          {% if service.hard_work %}
-                            <li><a data-toggle="tab" href="#WorkHard">Work Hard</a></li>
-                          {% endif %}
-                          {% if service.success %}
-                          <li><a data-toggle="tab" href="#Success">Success</a></li>
-                          {% endif %}
-                        </ul>
-  
-                          <div class="tab-content">
-                            <div id="Brainstorming" class="tab-pane fade in active">
-                              <p>{{ service.brainstorming }}</p>
-                            </div>
-                            <div id="Planification" class="tab-pane fade">
-                              <p>{{ service.plannification }}</p>
-                            </div>
-                            <div id="WorkHard" class="tab-pane fade">
-                              <p>{{ service.hard_work }}</p>
-                            </div>
-                            <div id="Success" class="tab-pane fade">
-                              <p>{{ service.success }}</p>
-                            </div>
-                          </div>
-                      </div><!-- End tab -->
-                    <!-- End col -->      
-  
-                  </div><!-- End v-block -->
+                        </div><!-- End v-block -->
+                 
               </div>
   
           </div><!-- End Row -->

@@ -1,6 +1,7 @@
 from datetime import datetime
 from services.models import Services
 from contact.models import ContactInfo, SocialNetwork
+from projects.models import Projects
 
 
 def services_context_processor(request):
@@ -9,6 +10,10 @@ def services_context_processor(request):
                  "title":  service.title}, services)
     return {
         "titles": titles,
+    }
+def projects_context_processor(request):
+    return {
+        "ifProject": True if Projects.objects.all() else False
     }
 
 
