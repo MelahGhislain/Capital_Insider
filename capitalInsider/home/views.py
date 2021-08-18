@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from django.http import HttpResponseRedirect
+from django.core.mail import  send_mail
 from about.models import AboutUs, Expert
 from services.models import Services
 from projects.models import Projects
@@ -18,8 +20,19 @@ def homePage(request):
     if request.method == "POST":
         form = GetCallForm(request.POST)
         if form.is_valid():
-            pass
-        ##########################################
+            select = form.cleaned_data['select']
+            phone = form.cleaned_data['phone']
+            name = form.cleaned_data['name']
+            # send an email
+            ####################################
+            # send_mail(
+            #     username, # subject
+            #     message, # message
+            #     email, # from email
+            #     ["melahghislain17@gmail.com"], # to email
+            # )
+
+            return HttpResponseRedirect("/")
     context = {
         "services": services,
         "projects": projects,
