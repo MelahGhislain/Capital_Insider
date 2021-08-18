@@ -40,13 +40,21 @@
                         <div class="col-sm-6 col-md-8 left-hblock">
                           <p>{{ service.description }}</p>
                         </div>
-                        <div class="col-sm-6 col-md-4 right-hblock">
-                            <div class="brochures-download">
-                              <p>DOWNLOAD BROCHURES</p>
-                              <button type="button" class="btn btn-download"><i class="fa fa-file-pdf-o" aria-hidden="true"></i> DownloadFile.pdf</button>
-                              <button type="button" class="btn btn-download"><i class="fa fa-file-word-o" aria-hidden="true"></i> DownloadFile.pdf</button>
-                            </div>
-                        </div>
+                        {% if bronchures%}
+                          <div class="col-sm-6 col-md-4 right-hblock">
+                              <div class="brochures-download">
+                                <p>DOWNLOAD BROCHURES</p>
+                                {% if bronchures.PDFfile %}
+                                  <button type="button" class="btn btn-download"><i class="fa fa-file-pdf-o" aria-hidden="true"></i> <a href="{{ bronchures.PDFfile.url }}" download>DownloadFile.pdf</a></button>
+                                {% endif %}
+
+                                {% if bronchures.PDFfile %}
+                                  <button type="button" class="btn btn-download"><i class="fa fa-file-word-o" aria-hidden="true"></i> <a href="{{ bronchures.DOCfile.url }}" download>DownloadFile.doc</a></button>
+                                {% endif %}
+
+                              </div>
+                          </div>
+                        {% endif %}
                       </div><!-- End row -->
                   </div><!-- End H-block -->
                   

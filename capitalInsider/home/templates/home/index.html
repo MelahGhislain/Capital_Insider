@@ -208,22 +208,25 @@
                     </div>
                     <div class="col-md-6 get-call-back-right">
                     <div class="call-back-form">
-                        <form action="GET" method="POST">
+                        <form method="POST">
+                            {% csrf_token %}
                         <p>How can we help? *</p>
-                        
-                        <select class="form-control custom-form custom-select">
+                        {{ form.select }}
+                        <!-- <select class="form-control custom-form custom-select">
                             <option selected="selected">Discussions with Financial Experts</option>
                             <option>Meet Finance Assistant - PR Agency </option>
                             <option>Discussions with Senior Finance Manager</option>
                             <option>Designer</option>
                             <option>Our CEO Finanace Theme Group</option>
-                        </select>
+                        </select> -->
                         <div class="row">
                             <div class="form-group col-md-6 custom-form">
-                            <input type="text" class="form-control" id="name" placeholder="Your Name: *">
+                                {{ form.name }}
+                            <!-- <input type="text" class="form-control" id="name" placeholder="Your Name: *"> -->
                             </div>
                             <div class="form-group col-md-6 custom-form">
-                            <input type="text" class="form-control" id="phone" placeholder="Phone Number: *">
+                                {{ form.phone }}
+                            <!-- <input type="text" class="form-control" id="phone" placeholder="Phone Number: *"> -->
                             </div>
                         </div>
                         <button type="submit" class="ot-btn large-btn btn-rounded btn-main-color btn-submit">Submit</button>

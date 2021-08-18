@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Services
+from .models import Services, Brochures
 
 # Create your views here.
 def servicePage(request):
@@ -16,12 +16,14 @@ def servicePage(request):
 
 
 def serviceDetail(request, id):
+    bronchures = Brochures.objects.first()
     services = Services.objects.all()
     service_data = Services.objects.get(id=id)
     service_titles = map(lambda data: {"title": data.title, "id": data.id} , services) 
     return render(request, 'services/service_detail.html',
                 {
                     "service": service_data, 
-                    "service_titles": service_titles
+                    "service_titles": service_titles,
+                    'bronchures': bronchures,
                  })
 
