@@ -1,5 +1,5 @@
 from django import forms
-from .models import MailUs, Map
+from .models import MailUs
 
 
 class ContactForm(forms.ModelForm):
@@ -37,20 +37,6 @@ class ContactForm(forms.ModelForm):
                 'placeholder': 'Your Messages',
                 'rows': "6"
                 }),
-       }
-
-
-class MapForm(forms.ModelForm):
-    class Meta:
-        model = Map
-        fields = ("location",)
-        widgets = {
-            'location': forms.TextInput(attrs={
-                'class': 'form-control',
-                'id': 'yourLocation',
-                'name': 'yourLocation',
-                'placeholder': 'Your location',
-                }),  
        }
 
 

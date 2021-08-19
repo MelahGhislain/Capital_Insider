@@ -28,12 +28,3 @@ class MailUs(models.Model):
     email = models.EmailField()
     phone_num = models.CharField(max_length=50)
     message = models.TextField(max_length=250)
-
-class Map(models.Model):
-    location = models.CharField(max_length=200)
-    destination = models.CharField(max_length=200)
-    distance = models.DecimalField(decimal_places=2, max_digits=10000)
-    created_at = models.DateTimeField(auto_now_add=True)
-
-    def __str__(self):
-        return self.location
