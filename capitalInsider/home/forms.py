@@ -6,11 +6,12 @@ class GetCallForm(forms.Form):
     OPTIONS = (
     ('Discussions with Financial Experts', 'Discussions with Financial Experts'),
     ('Meet Finance Assistant - PR Agency', 'Meet Finance Assistant - PR Agency'),
-    ('Discussions with Senior Finance Manager', 'Designer', 'Discussions with Senior Finance Manager', 'Designer'),
+    ( 'Designer', 'Designer'),
+    ('Discussions with Senior Finance Manager', 'Discussions with Senior Finance Manager'),
     ('Our CEO Finanace Theme Group', 'Our CEO Finanace Theme Group')
 )
 
-    select = forms.ChoiceField(label=None, 
+    select = forms.ChoiceField(label=None, choices=OPTIONS,
                                widget=forms.Select(attrs={
                                    'class': 'form-control custom-form custom-select'
                                }))
