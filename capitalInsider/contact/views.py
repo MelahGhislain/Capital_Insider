@@ -87,7 +87,7 @@ class ContactView(View):
             _location = map_form.cleaned_data.get('location')
             location = geolocator.geocode(_location)
             # laction coordinates
-            l_lat = location.latitude
+            l_lat = location.latitude 
             l_lon = location.longitude
             pointB = (l_lat, l_lon)
             distance = round(geodesic(pointA, pointB).km, 2)
@@ -120,6 +120,6 @@ class ContactView(View):
             "socials": social_networks,
             "form": form,
             "map_form": map_form,
-            "map": n,
+            "map": "" # n,
         })
 

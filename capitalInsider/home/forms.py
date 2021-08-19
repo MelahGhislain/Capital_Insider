@@ -10,7 +10,7 @@ class GetCallForm(forms.Form):
     ('Our CEO Finanace Theme Group', 'Our CEO Finanace Theme Group')
 )
 
-    select = forms.ChoiceField(label=None, choices=OPTIONS, 
+    select = forms.ChoiceField(label=None, 
                                widget=forms.Select(attrs={
                                    'class': 'form-control custom-form custom-select'
                                }))
