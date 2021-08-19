@@ -1,166 +1,205 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% load static %} {% block title %}
+<h2>Contact Us</h2>
+{% endblock %} {% block sub-title %}
+<li class="active">Contact Us</li>
+{% endblock %} {% block content %}
 
-{% load static %}
-
-
-{% block title %}
-    <h2>Contact Us</h2>
-{% endblock %}
-
-
-{% block sub-title %}
-    <li class="active">Contact Us</li>
-{% endblock %}
-
-{% block content %}
-
-    <!-- Section form contact -->
-    <section class="padding-top:50px;">
-    	<div class="container">
-    	<div class="row">
-    	<div class="col-md-7 left-contact">
-            <h4>Contact Info</h4>
-    				<div class="accordion-style-light no-round accordion-3">
-                <div class="accordion-warp">
-                  <div class="panel-group" id="accordion3">
-                  <div class="panel panel-default">
-                      <div class="panel-heading">
-                          <h4 class="panel-title">
-                              <a data-toggle="collapse" data-parent="#accordion3" href="#collapseOne2"><i class="fa fa-trophy" aria-hidden="true"></i> Finance the best choice for your business</a>
-                          </h4>
-                      </div>
-                      <div id="collapseOne2" class="panel-collapse collapse in">
-                          <div class="panel-body">
-                            <div class="accordion-content">
-                              <p>Fusce ornare mi vel risus porttitor dignissim. Nunc eget risus at ipsum blandit ornare vel sed velit. Proin gravida arcu nisl, a dignissim mauris placerat id. Vivamus interdum urna at sapien varius elementum. Suspendisse ut mi felis et interdum libero lacinia vel. Aenean elementum odio ut lorem cursus, eu auctor magna pellentesque.  </p>
-                            </div>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="panel panel-default">
-                      <div class="panel-heading">
-                          <h4 class="panel-title">
-                              <a data-toggle="collapse" data-parent="#accordion3" href="#collapseTwo2" class="collapsed"><i class="fa fa-map-marker" aria-hidden="true"></i> Contacts and location </a>
-                          </h4>
-                      </div>
-                      <div id="collapseTwo2" class="panel-collapse collapse">
-                          <div class="panel-body">
-                              <div class="accordion-content">
-                              <dl class="dl-horizontal"> 
-                                <dt>Location</dt> <dd><i class="fa fa-map-marker"></i> {{ contact.location }}</dd> 
-                                <dt>Administration Phone Number</dt> <dd><i class="fa fa-phone"></i> (+237) {{ contact.administration_phone_num }}</dd> 
-                                <!-- <dt>FREE Hotline </dt> <dd><i class="fa fa-phone"></i>  (+84) 946 716 4545</dd>  -->
-                                <dt>E-mail</dt> <dd><i class="fa fa-envelope-o"></i> {{ contact.email }}</dd> 
-                              </dl>
-                            </div>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="panel panel-default">
-                      <div class="panel-heading">
-                          <h4 class="panel-title">
-                              <a data-toggle="collapse" data-parent="#accordion3" href="#collapseThree2" class="collapsed"><i class="fa fa-mobile" aria-hidden="true"></i> Financial advisors in touch</a>
-                          </h4>
-                      </div>
-                      <div id="collapseThree2" class="panel-collapse collapse">
-                          <div class="panel-body">
-                              <div class="accordion-content">
-                              <dl class="dl-horizontal"> 
-                                {% for advisor in advisors %}
-                                  <dt>{{ advisor.position }} </dt> <dd><i class="fa fa-phone"></i> (+237) {{ advisor.phone_number }}</dd> 
-                                {% endfor %}
-                            
-                              </dl>
-                            </div>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="panel panel-default">
-                      <div class="panel-heading">
-                          <h4 class="panel-title">
-                              <a data-toggle="collapse" data-parent="#accordion3" href="#collapseFour2" class="collapsed"><i class="fa fa-twitter" aria-hidden="true"></i> Finance in social networks</a>
-                          </h4>
-                      </div>
-                      <div id="collapseFour2" class="panel-collapse collapse">
-                          <div class="panel-body">
-                              <div class="accordion-content">
-                                <p>Join us in social networks </p>
-                                <ul class="social social-dark social-bg-dark">
-                                  {% for social in socials %}
-                                    <li class="{{social.name}}"><a href="{{social.link}}" target="blank"><i class="fa fa-{{social.name}}"></i></a></li>
-                                  {% endfor %}
-                                </ul>
-                                 
-                            </div>
-                          </div>
-                      </div>
-                  </div>
-                  </div> <!-- End panel group -->
+<!-- Section form contact -->
+<section class="padding-top:50px;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7 left-contact">
+        <h4>Contact Info</h4>
+        <div class="accordion-style-light no-round accordion-3">
+          <div class="accordion-warp">
+            <div class="panel-group" id="accordion3">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a
+                      data-toggle="collapse"
+                      data-parent="#accordion3"
+                      href="#collapseOne2"
+                      ><i class="fa fa-trophy" aria-hidden="true"></i> Finance
+                      the best choice for your business</a
+                    >
+                  </h4>
                 </div>
-            </div>		
-    	</div> <!-- End col -->
-    			<div class="col-md-5 right-contact">
-    				<h4> Send Us a Message</h4>
-    				<form class="form-inline form-contact-finance form-contact-2" name="contact" method="POST">
-                  
-                  {% csrf_token %}
-
-                  <div class="row">
-                    <div class="form-group col-sm-12  ">
-                      {{ form.user_name }}
-                      <!-- <input type="text" class="form-control" name="yourName" id="yourName" placeholder="Your Name"> -->
-                    </div>
-                    <div class="form-group col-sm-12 ">
-                      {{ form.email }}
-                      <!-- <input type="email" class="form-control" name="yourEmail" id="yourEmail" placeholder="Your Email" > -->
-                    </div>
-                    <div class="form-group col-sm-12 ">
-                      {{ form.phone_num }}
-                      <!-- <input type="text" class="form-control" name="yourPhone" id="phoneNumber" placeholder="Phone Number" > -->
+                <div id="collapseOne2" class="panel-collapse collapse in">
+                  <div class="panel-body">
+                    <div class="accordion-content">
+                      <p>
+                        Fusce ornare mi vel risus porttitor dignissim. Nunc eget
+                        risus at ipsum blandit ornare vel sed velit. Proin
+                        gravida arcu nisl, a dignissim mauris placerat id.
+                        Vivamus interdum urna at sapien varius elementum.
+                        Suspendisse ut mi felis et interdum libero lacinia vel.
+                        Aenean elementum odio ut lorem cursus, eu auctor magna
+                        pellentesque.
+                      </p>
                     </div>
                   </div>
-                  <div class="input-content">
-                    <div class="form-group form-textarea">
-                      {{ form.message }}
-                      <!-- <textarea id="textarea" class="form-control" name="comments" rows="6" placeholder="Your Messages" ></textarea> -->
-                    </div>
-                  </div>
-                  <button class="ot-btn large-btn btn-rounded  btn-main-color btn-submit">Send Mail</button>
-             </form> <!-- End Form -->
-    			</div> <!-- End col -->
-    		</div>
-    	</div>
-    </section>
-    <!-- End Section -->
-   
-   	<!-- Section Google Map -->
-   	<div class="no-padding ">
-      <h4> Enter your location</h4>
-      <form class="form-inline form-contact-finance form-contact-2" name="location" method="POST">
-            
-            {% csrf_token %}
-
-            <div class="row">
-              <div class="form-group col-sm-12">
-                {{ map_form }}
-                <!-- <input type="text" class="form-control" name="yourName" id="yourName" placeholder="Your Name"> -->
+                </div>
               </div>
-
-              <button class="ot-btn large-btn btn-rounded  btn-main-color btn-submit">Get direction</button>
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a
+                      data-toggle="collapse"
+                      data-parent="#accordion3"
+                      href="#collapseTwo2"
+                      class="collapsed"
+                      ><i class="fa fa-map-marker" aria-hidden="true"></i>
+                      Contacts and location
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseTwo2" class="panel-collapse collapse">
+                  <div class="panel-body">
+                    <div class="accordion-content">
+                      <dl class="dl-horizontal">
+                        <dt>Location</dt>
+                        <dd>
+                          <i class="fa fa-map-marker"></i> {{ contact.location
+                          }}
+                        </dd>
+                        <dt>Administration Phone Number</dt>
+                        <dd>
+                          <i class="fa fa-phone"></i> (+237) {{
+                          contact.administration_phone_num }}
+                        </dd>
+                        <!-- <dt>FREE Hotline </dt> <dd><i class="fa fa-phone"></i>  (+84) 946 716 4545</dd>  -->
+                        <dt>E-mail</dt>
+                        <dd>
+                          <i class="fa fa-envelope-o"></i> {{ contact.email }}
+                        </dd>
+                      </dl>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a
+                      data-toggle="collapse"
+                      data-parent="#accordion3"
+                      href="#collapseThree2"
+                      class="collapsed"
+                      ><i class="fa fa-mobile" aria-hidden="true"></i> Financial
+                      advisors in touch</a
+                    >
+                  </h4>
+                </div>
+                <div id="collapseThree2" class="panel-collapse collapse">
+                  <div class="panel-body">
+                    <div class="accordion-content">
+                      <dl class="dl-horizontal">
+                        {% for advisor in advisors %}
+                        <dt>{{ advisor.position }}</dt>
+                        <dd>
+                          <i class="fa fa-phone"></i> (+237) {{
+                          advisor.phone_number }}
+                        </dd>
+                        {% endfor %}
+                      </dl>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a
+                      data-toggle="collapse"
+                      data-parent="#accordion3"
+                      href="#collapseFour2"
+                      class="collapsed"
+                      ><i class="fa fa-twitter" aria-hidden="true"></i> Finance
+                      in social networks</a
+                    >
+                  </h4>
+                </div>
+                <div id="collapseFour2" class="panel-collapse collapse">
+                  <div class="panel-body">
+                    <div class="accordion-content">
+                      <p>Join us in social networks</p>
+                      <ul class="social social-dark social-bg-dark">
+                        {% for social in socials %}
+                        <li class="{{social.name}}">
+                          <a href="{{social.link}}" target="blank"
+                            ><i class="fa fa-{{social.name}}"></i
+                          ></a>
+                        </li>
+                        {% endfor %}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            
-       </form> <!-- End Form -->
-       {{ map|safe }}
-   		<!-- <div id="map-canvas" class="margin-top-15">
-         This product includes GeoLite2 data created by MaxMind, available from
-         
-         <a href="https://www.maxmind.com">https://www.maxmind.com</a>.
-         <iframe src="" frameborder="0" allowfullscreen>
-          {{ map|safe }}
-         </iframe>
-       </div> -->
-   	</div>
-   	<!-- End Section -->
+            <!-- End panel group -->
+          </div>
+        </div>
+      </div>
+      <!-- End col -->
+      <div class="col-md-5 right-contact">
+        <h4>Send Us a Message</h4>
+        <form
+          class="form-inline form-contact-finance form-contact-2"
+          name="contact"
+          method="POST"
+        >
+          {% csrf_token %}
 
+          <div class="row">
+            <div class="form-group col-sm-12">
+              {{ form.user_name }}
+              <!-- <input type="text" class="form-control" name="yourName" id="yourName" placeholder="Your Name"> -->
+            </div>
+            <div class="form-group col-sm-12">
+              {{ form.email }}
+              <!-- <input type="email" class="form-control" name="yourEmail" id="yourEmail" placeholder="Your Email" > -->
+            </div>
+            <div class="form-group col-sm-12">
+              {{ form.phone_num }}
+              <!-- <input type="text" class="form-control" name="yourPhone" id="phoneNumber" placeholder="Phone Number" > -->
+            </div>
+          </div>
+          <div class="input-content">
+            <div class="form-group form-textarea">
+              {{ form.message }}
+              <!-- <textarea id="textarea" class="form-control" name="comments" rows="6" placeholder="Your Messages" ></textarea> -->
+            </div>
+          </div>
+          <button
+            class="ot-btn large-btn btn-rounded btn-main-color btn-submit"
+          >
+            Send Mail
+          </button>
+        </form>
+        <!-- End Form -->
+      </div>
+      <!-- End col -->
+    </div>
+  </div>
+</section>
+<!-- End Section -->
+
+<!-- Section Google Map -->
+<div class="no-padding">
+  <div id="map-canvas" class="margin-top-15">
+    <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2066.7595318750045!2d9.285094140537895!3d4.156753391793233!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1061318cdcc5321f%3A0xb0a8878a1a2443d4!2zNMKwMDknMjQuMyJOIDnCsDE3JzEwLjQiRQ!5e0!3m2!1sen!2scm!4v1611028713200!5m2!1sen!2scm"
+    frameborder="0"
+    allowfullscreen="allowfullscreen"
+    aria-hidden="false"
+    tabindex="0"
+    style="padding-top: 5% !important; width: 100%; height: 450px; border: 0px"
+  ></iframe>
+  </div>
+  
+</div>
+<!-- End Section -->
 
 {% endblock %}
