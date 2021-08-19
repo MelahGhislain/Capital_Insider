@@ -13,6 +13,9 @@ class ContactInfo(models.Model):
     administration_phone_num = models.IntegerField()
     email = models.EmailField()
 
+    def __str__(self):
+        return self.location
+
 class FinancialAdvisor(models.Model):
     position = models.CharField(max_length=50)
     phone_number = models.IntegerField()

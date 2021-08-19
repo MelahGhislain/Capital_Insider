@@ -3,9 +3,9 @@
 <div class="top-bar top-bar-dark">
   <div class="container">
     <div class="left-top-bar left-top-bar-long">
-          <p class="hidden-xs" ><span class="lnr lnr-map-marker large-lnr"></span> 8th floor, 379 Hudson St, New York, NY 10018</p>
-           <p class="hidden-xs"><span class="lnr lnr-smartphone large-lnr"></span> 1-800-123-6879 </p>
-            <p class="hidden-xs"><span class="lnr lnr-envelope large-lnr"></span> contact@finance.com</p>
+          <p class="hidden-xs" ><span class="lnr lnr-map-marker large-lnr"></span>{{ contact_info.location }}</p>
+           <p class="hidden-xs"><span class="lnr lnr-smartphone large-lnr"></span> {{ contact_info.administration_phone_num }} </p>
+            <p class="hidden-xs"><span class="lnr lnr-envelope large-lnr"></span> {{ contact_info.email }}</p>
             <div class="popover-container visible-xs">
                 <button type="button" class="btn btn-popover popover-dark" data-container="body" data-toggle="popover" data-placement="bottom" title="0112-826-2789" data-content="contact@site.com">
                     <span class="lnr lnr-phone-handset"></span>
@@ -20,11 +20,9 @@
     </div> <!-- End left top bar -->
     <div class="right-top-bar">
         <ul class="social">
-            <li class="facebook"><a href=""><i class="fa fa-facebook"></i></a></li>
-            <li class="twitter"><a href=""><i class="fa fa-twitter"></i></a></li>
-            <li class="google-plus"><a href=""><i class="fa fa-google-plus"></i></a></li>
-            <li class="youtube"><a href=""><i class="fa fa-youtube-play"></i></a></li>
-            <li class="linkedin"><a href=""><i class="fa fa-linkedin"></i></a></li>
+          {% for social in social_icons %}
+            <li class="{{social.name}}"><a href="{{social.link}}" target="blank"><i class="fa fa-{{social.name}}"></i></a></li>
+          {% endfor %}
         </ul>
     </div><!-- End right top bar -->
   </div> <!-- End container -->
@@ -46,15 +44,19 @@
                     <li class="has-sub"><a href="{% url 'services' %}">Services</a>
       
                     </li>
-                    <li class="has-sub"><a href="{% url 'projects' %}">Projects</a>
-          
-                    </li>
+
+                    {% if ifProject %}
+                      <li class="has-sub"><a href="{% url 'projects' %}">Projects</a></li>
+                    {% endif %}
+                    
                     <li class="has-sub"><a href="{% url 'news' %}">News</a>
                         
                     </li>
                     <li><a href="{% url 'about' %}">About Us  </a></li>
-                    <li class="has-sub"><a href="{% url 'contact' %}">Contact Us</a>
-                    </li>
+                    <li class="has-sub"><a href="{% url 'contact' %}">Contact Us</a></li>
+                   
+                    <li id="login-btn"><a href="" class="btn btn-login">Login</a></li>
+                    
                 </ul>
     </nav>
   </div> <!-- End container -->

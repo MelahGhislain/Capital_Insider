@@ -2395,11 +2395,12 @@ ul.social-bg-dark {
   margin-top: 30px;
   border: 1px solid #00abc9;
 }
-.promotion .promotionText .btn-buy-now:hover {
+.promotion .promotionText .btn-buy-now:hover{
   background: #00abc9;
   border: 1px solid #fff;
   color: #fff;
 }
+
 .site-main {
   padding-right: 34px;
   border-right: 1px solid #ebebeb;

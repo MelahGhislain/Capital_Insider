@@ -1,0 +1,254 @@
+{% extends 'base.html' %} 
+
+{% load static %} 
+
+{% block title %}
+    <h2>Company News</h2>
+{% endblock %} 
+
+{% block sub-title %}
+    <li class="active">News</li>
+{% endblock %} 
+
+{% block content %}
+
+
+<!--Blog Detail -->
+<section class="no-padding">
+  <div class="container">
+    <div class="row">
+      <!-- news section -->
+      <div
+        id="primary"
+        class="content-area col-md-12 no-padding-right padding-bottom-70">
+        <main id="main" class="site-main padding-top-50">
+          <h1>{{ news.title }}</h1>
+          <div class="latest-news-data">
+            <!-- <span class="tags"
+              ><a href="#">Financial</a>, <a href="#"> Maketing</a></span
+            > -->
+            <span class="dates"><span>Posted on </span>  {{ news.date }}</span>
+          </div>
+          <div class="lastest-news-detail">
+            <img
+              src="{{ news.image.url }}"
+              class="img-responsive"
+              alt="Image"
+            />
+            <!-- <h4>Context of Business</h4> -->
+            <p style="margin-bottom:25px;">
+              {{news.news_detail}}
+            </p>
+            <!-- <br />
+            <p>
+              Nulla fermentum eros vitae est finibus dapibus. Aliquam porta
+              nulla a elit varius efficitur. In in magna sed turpis venenatis
+              tristique eu eget neque. Duis condimentum libero ornare quam
+              tincidunt interdum. _set porttitor nisi ut lectus
+              pellentesque, ut fringilla leo convallis.
+            </p> -->
+            <!-- <br />
+            <blockquote>
+              <p>
+                Wullam placerat vehicula pulvinar. Nam convallis euismod
+                maximus. Suspendisse dignissim, ante at posuere cursus, diam
+                nisl viverra felis, vel malesuada ex ante ac urna.
+              </p>
+              <strong>CHERYL CRUZ</strong>
+            </blockquote> -->
+            <!-- <br />
+            <p>
+              Duis gravida tempus imperdiet. Vivamus elit vel consequat
+              elementum. Cras consequat lorem non orci sagittis, eget volutpat
+              neque imperdiet. Nam auctor nisi vitae enim accumsan, ac dignissim
+              tortor consequat.
+            </p> -->
+
+            <!-- <ul class="style-list-circle">
+              <li>
+                <a href="#">Nullam consequat lacus non luctus finibus.</a>
+              </li>
+              <li><a href="#">Interdum et malesuada fames ac ante</a></li>
+              <li>
+                <a href="#">Nam justo ipsum, sagittis sed hendrerit ac</a>
+              </li>
+              <li><a href="#">Interdum et malesuada fames ac ante</a></li>
+              <li>
+                <a href="#">Nam justo ipsum, sagittis sed hendrerit ac</a>
+              </li>
+            </ul> -->
+
+          </div>
+          <!-- <div class="footer-detail-blog">
+            <div class="tags-bottom">
+              <p>
+                TAGES&nbsp;: &nbsp;<a href=""> Construction</a>,&nbsp;
+                <a href="">Architect</a>,&nbsp; <a href="">House</a> ,&nbsp;
+                <a href="">Building</a>
+              </p>
+            </div>
+            <div class="share-bottom">
+              <p>
+                SHARE&nbsp;: &nbsp;<a href=""> Facebook</a>,&nbsp;
+                <a href="">Twitter</a>,&nbsp; <a href="">Google+</a>
+              </p>
+            </div>
+          </div> -->
+          <div class="line"></div>
+          <div class="entry_post_navigation">
+            {% if page_obj.has_previous %}
+            <div class="preview_entry_post">
+              <a href="{% url 'news-detail' page_obj.previous_page_number %}">
+                <span
+                  ><i class="fa fa-angle-double-left" aria-hidden="true"></i>
+                  PREVIEW</span
+                >
+                <h3>{{ previous_page_title }}</h3>
+              </a>
+            </div>
+            {% endif %}
+
+            {% if page_obj.has_next%}
+            <div class="next_entry_post">
+              <a href="{% url 'news-detail' page_obj.next_page_number %}">
+                <span
+                  >NEXT
+                  <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                </span>
+                <h3>{{ next_page_title }}</h3>
+              </a>
+            </div>
+            {% endif %}
+            
+          </div>
+          <!-- End entry Post Navigation -->
+          {% if comments %}
+              <div class="line"></div>
+              <div id="comments" class="comments-area">
+                <h2 class="comments-title">
+                  {% if comments.count  <= 1 %}
+                    {{ num_of_comments }} Comment
+                  {% else %}
+                    {{ num_of_comments }} Comments
+                  {% endif %}
+                </h2>
+                <ol class="comment-list">
+                  
+                {% for comment in comments %}
+                      
+                      <li class="comment last-comment">
+                        <div class="comment-body">
+                          <!-- <div class="comment-meta commentmetadata">
+                            <div class="comment-author vcard">
+                              <img
+                                alt=""
+                                src="images/Testimonials/1.jpg"
+                                class="avatar photo avatar-default"
+                              />
+                            </div>
+                          </div> -->
+                          <div class="comment-content" style="overflow-wrap:break-word;">
+                            <p>
+                            {{ comment.message }}
+                            </p>
+                            <cite class="fn"
+                              ><a rel="external nofollow" class="url"
+                                >{{ comment.name }}</a
+                              ></cite
+                            >
+                            -
+                            <a href="" class="comment-date">
+                              <span>{{ comment.date }}</span>
+                            </a>
+                            <!-- <div class="reply">
+                              <a
+                                rel="nofollow"
+                                class="comment-reply-link"
+                                href=""
+                                onclick=""
+                                aria-label=""
+                                ><i class="fa fa-share" aria-hidden="true"></i> Reply</a
+                              >
+                            </div> -->
+                          </div>
+                        </div>
+                        <!-- End comment body -->
+                      </li>
+                {% endfor %}
+                </ol>
+              </div>
+              <!-- Comments Area -->
+              <div class="entry_post_navigation">
+                {% if comments.has_previous %}
+                <div class="preview_entry_post">
+                  <a href="?comment={{ comments.previous_page_number }}">
+                    <span
+                      ><i class="fa fa-angle-double-left" aria-hidden="true"></i>
+                      PREVIEW</span
+                    >
+                  </a>
+                </div>
+                {% endif %}
+
+                {% if comments.has_next%}
+                <div class="next_entry_post">
+                  <a href="?comment={{ comments.next_page_number }}">
+                    <span
+                      >NEXT
+                      <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                    </span>
+                  </a>
+                </div>
+                {% endif %}
+                
+              </div>
+              <!-- End entry Post Navigation -->
+          {% endif %}
+          <div id="respond" class="comment-respond">
+            <h3 id="reply-title" class="comment-reply-title">Leave a comment</h3>
+            <form
+              method="post"
+              id="commentform"
+              class="comment-form form-inline"
+            >
+            {% csrf_token %}
+              
+              <div class="row">
+                <div class="form-group col-sm-12 col-md-12 padding-right-10">
+                  <label class="sr-only" for="inputName">Name</label>
+                  {{ comment_form.name }}
+                  
+                </div>
+                
+                <div class="form-group col-xs-12">
+                  {{ comment_form.message }}
+                </div>
+              </div>
+              <input type="text" value="{{ news.id }}" style="display:none;" name="news_id">
+              <!-- End row -->
+              <p class="form-submit">
+                <button
+                  name="submit"
+                  id="submit"
+                  class="ot-btn btn-main-color large-btn btn-rounded btn-submit"
+                  type="submit"
+                >
+                  Comment
+                </button>
+              </p>
+            </form>
+          </div>
+        </main>
+      </div>
+      <!-- End Col -->
+
+      </div> 
+    </div>
+    <!-- End Row -->
+  </div>
+  <!-- End container -->
+</section>
+<!--  End Section -->
+<!-- Footer -->
+
+{% endblock %}
