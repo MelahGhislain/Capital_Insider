@@ -140,9 +140,9 @@ MEDIA_URL = '/images/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
+# set the path of the data base images
 MEDIA_ROOT = os.path.join(BASE_DIR, 'images')
 
-GEOIP_PATH = os.path.join(BASE_DIR, 'geoip')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -156,6 +156,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # myaccount.google.com/lapppaswords
 
 # Email settings
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = '587'
 EMAIL_HOST_USER = 'melahghislain17@gmail.com' # my email adress
@@ -164,3 +165,12 @@ EMAIL_USE_TLS = True
 
 # EMAIL_USE_SSL = False
 
+#serving static files in AWS
+AWS_ACCESS_KEY_ID = ''
+AWS_SECRET_ACCESS_KEY = ''
+AWS_SECRET_BUCKET_NAME = ''
+
+# AWS_S3_FILE_OVERWRITE = False
+# AWS_DEFAULT_ACL = None
+# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'

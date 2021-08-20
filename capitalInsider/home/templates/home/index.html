@@ -53,84 +53,99 @@
                         <h2 class="title clearfix">Our Services</h2>
                 </div> <!-- End col -->
                 <div class="services-warp">
+                    {% if services.0 %}
                     <article class=" col-sm-6 col-md-4 media-style media-left-icon-item">
                         <div class="media">
                         <div class="media-left">
                             <i class="fa fa-bar-chart"></i>
                         </div>
                         <div class="media-body">
-                            <h4 class="">Financial Planning</h4>
-                            <p>
-                            Donec lacinia mi rutrum sagittis consequat. Donec sagittis, tellus sodales sollicitudin commodo, risus urna interdum massa
+                            <h4 class="">{{ services.0.title|title }}</h4>
+                            <p>{{ services.0.description|slice:":100" }} ...  
+                                <a class="learn-more" href="{% url 'service-detail' services.0.id %}">Read More</a>
                             </p>
+                            
                         </div>
                         </div>
                     </article><!-- End article -->
+                    {% endif %}
+
+                    {% if services.1 %}
                     <article class=" col-sm-6 col-md-4 media-style media-left-icon-item">
                         <div class="media">
                         <div class="media-left">
                             <i class="fa fa-money"></i>
                         </div>
                         <div class="media-body">
-                            <h4 class="">Investments Management</h4>
-                            <p>
-                            Quisque mollis metus magna, ut accumsan elit hendrerit ac. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                            <h4 class="">{{ services.1.title|title }}</h4>
+                            <p>{{ services.1.description|slice:":100" }} ...
+                                <a class="learn-more" href="{% url 'service-detail' services.1.id %}">Read More</a>
                             </p>
                         </div>
                         </div>
                     </article><!-- End article -->
+                    {% endif %}
+                    {% if services.2 %}
                     <article class=" col-sm-6 col-md-4 media-style media-left-icon-item">
                         <div class="media">
                         <div class="media-left">
                             <i class="fa fa-calculator"></i>
                         </div>
                         <div class="media-body">
-                            <h4 class="">Taxes Planning</h4>
-                            <p>
-                            Donec lacinia mi rutrum sagittis consequat. Donec sagittis, tellus sodales sollicitudin commodo, risus urna interdum massa
+                            <h4 class="">{{ services.2.title|title }}</h4>
+                            <p>{{ services.2.description|slice:":100" }} ...
+                                <a class="learn-more" href="{% url 'service-detail' services.2.id %}">Read More</a>
                             </p>
                         </div>
                         </div>
                     </article><!-- End article -->
-                    <article class=" col-sm-6 col-md-4 media-style media-left-icon-item no-margin">
+                    {% endif %}
+                    {% if services.3 %}
+                    <article class=" col-sm-6 col-md-4 media-style media-left-icon-item">
                         <div class="media">
                         <div class="media-left">
                             <i class="fa fa-university"></i>
                         </div>
                         <div class="media-body">
-                            <h4 class="">Business Loan</h4>
-                            <p>
-                            Donec lacinia mi rutrum sagittis consequat. Donec sagittis, tellus sodales sollicitudin commodo, risus urna interdum massa
+                            <h4 class="">{{ services.3.title|title }}</h4>
+                            <p>{{ services.3.description|slice:":100" }} ...
+                                <a class="learn-more" href="{% url 'service-detail' services.3.id %}">Read More</a>
                             </p>
                         </div>
                         </div>
                     </article><!-- End article -->
-                    <article class=" col-sm-6 col-md-4 media-style media-left-icon-item no-margin">
+                    {% endif %}
+                    {% if services.4 %}
+                    <article class=" col-sm-6 col-md-4 media-style media-left-icon-item">
                         <div class="media">
                         <div class="media-left">
                             <i class="fa fa-shield"></i>
                         </div>
                         <div class="media-body">
-                            <h4 class="">Insurance Consulting</h4>
-                            <p>
-                            Donec lacinia mi rutrum sagittis consequat. Donec sagittis, tellus sodales sollicitudin commodo, risus urna interdum massa
+                            <h4 class="">{{ services.4.title|title }}</h4>
+                            <p>{{ services.4.description|slice:":100" }} ...
+                                <a class="learn-more" href="{% url 'service-detail' services.4.id %}">Read More</a>
                             </p>
                         </div>
                         </div>
                     </article><!-- End article -->
-                    <article class=" col-sm-6 col-md-4 media-style media-left-icon-item no-margin">
+                    {% endif %}
+                    
+                    {% if services.5 %}
+                    <article class=" col-sm-6 col-md-4 media-style media-left-icon-item">
                         <div class="media">
                         <div class="media-left">
                             <i class="fa fa-home"></i>
                         </div>
                         <div class="media-body">
-                            <h4 class="">Retirement Planning </h4>
-                            <p>
-                            Donec lacinia mi rutrum sagittis consequat. Donec sagittis, tellus sodales sollicitudin commodo, risus urna interdum massa
+                            <h4 class="">{{ services.5.title|title }}</h4>
+                            <p>{{ services.5.description|slice:":100" }} ...
+                                <a class="learn-more" href="{% url 'service-detail' services.5.id %}">Read More</a>
                             </p>
                         </div>
                         </div>
                     </article><!-- End article -->
+                    {% endif %}<!-- End article -->
                 </div><!-- End Services Warp -->
             </div> <!-- End Row -->
             </div><!-- End container -->
