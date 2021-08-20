@@ -16,7 +16,7 @@
            $('#hc').animateNumber
            (
               {
-               number: 95,
+               number: 1,
                easing: 'ease', 
               },
               2000
