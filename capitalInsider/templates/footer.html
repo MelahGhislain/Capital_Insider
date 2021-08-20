@@ -7,7 +7,9 @@
         <div class="footer-row">
           
             <div class="footer-col-1">
-                <a href="{% url 'home' %}"><img src="{% static 'images/Header/logo.png' %}" class="img-responsive" alt="Image"></a>                    
+                <a href="{% url 'home' %}">
+                  <img src="{% static 'images/Header/logo.png' %}" class="img-responsive" alt="Image">
+                </a>                    
                 <ul class="clearfix">
                   {% if titles %}
                     {% for title in titles|slice:":6" %}
