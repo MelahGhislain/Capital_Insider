@@ -140,9 +140,9 @@ MEDIA_URL = '/images/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
+# set the path of the data base images
 MEDIA_ROOT = os.path.join(BASE_DIR, 'images')
 
-GEOIP_PATH = os.path.join(BASE_DIR, 'geoip')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -170,7 +170,7 @@ AWS_ACCESS_KEY_ID = ''
 AWS_SECRET_ACCESS_KEY = ''
 AWS_SECRET_BUCKET_NAME = ''
 
-AWS_S3_FILE_OVERWRITE = False
-AWS_DEFAULT_ACL = None
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# AWS_S3_FILE_OVERWRITE = False
+# AWS_DEFAULT_ACL = None
+# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
