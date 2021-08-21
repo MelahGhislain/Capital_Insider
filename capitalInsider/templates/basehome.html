@@ -125,12 +125,11 @@
                   {% if ifProject %}
                     <li class="has-sub"><a href="{% url 'projects' %}">Projects </a></li>
                   {% endif %}
-
+                  {% if ifNews %}
                   <li class="has-sub">
-                    <a href="{% url 'news' %}">News</i></a>
-                       
+                    <a href="{% url 'news' %}">News</a>
                   </li>
-                  
+                  {% endif %}
                   <li><a href="{% url 'about' %}">About Us  </a></li>
                   <li class="has-sub">
                     <a href="{% url 'contact' %}">Contact Us </a>

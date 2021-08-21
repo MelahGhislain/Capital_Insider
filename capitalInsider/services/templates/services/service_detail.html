@@ -68,33 +68,36 @@
                                     <p>{{ service.cash_flow_statement }}</p>
                                   </div>
                               
-                                    <div class="chart-2 chart-2-v">
+                                    
+                                 <div class="chart-google"> <!-- Start Chart Google API -->
+                                    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                                    <div id="piechart_3d" style="width: 900px; height: 400px;"></div>
+                                    <script type="text/javascript">
+                                      google.charts.load("current", {packages:["corechart"]});
+                                      google.charts.setOnLoadCallback(drawChart);
+                                      function drawChart() {
+                                        var data = google.visualization.arrayToDataTable([
+                                          ['Share of Loans Made to Small Businesses ', '2014'],
+                                          ['Giant Banks',     23],
+                                          ['Credit Unions',      7],
+                                          ['Small Banks',  33],
+                                          ['Medium Banks', 20],
+                                          ['Large Banks',    17]
+                                        ]);
                                       
-                                        <div style="" class="chart-v-item">
-                                            
-                                            <span class="percent-v update-v"></span>
-                                            <div class="progress  vertical bottom progress-v">
-                                                <div class="progress-bar bar-chart" role="progressbar" data-transitiongoal="90"></div>
-                                            </div>
-                                            <span class="label-v">OPPORTUNITY</span>
-                                        </div>
-                                        <div style="" class="chart-v-item">
-                                            
-                                            <span class="percent-v update-v"></span>
-                                            <div class="progress  vertical bottom progress-v">
-                                                <div class="progress-bar bar-chart" role="progressbar" data-transitiongoal="85"></div>
-                                            </div>
-                                            <span class="label-v">SAVE TIME</span>
-                                        </div>
-                                        <div style="" class="chart-v-item">
-                                            
-                                            <span class="percent-v update-v"></span>
-                                            <div class="progress  vertical bottom progress-v">
-                                                <div class="progress-bar bar-chart" role="progressbar" data-transitiongoal="100"></div>
-                                            </div>
-                                            <span class="label-v">INCOME</span>
-                                        </div>
-                                    </div> <!-- End chart -->
+                                        var options = {
+                                          title: 'Share of Loans Made to Small Businesses',
+                                          is3D: true,
+                                        };
+                                      
+                                        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+                                        chart.draw(data, options);
+                                      }
+                                    
+                                    </script>
+                                </div> <!-- End chart google API --> 
+
+
                               {% endif %}
                             </div><!-- End Vblog -->
                             <div class="col-md-6 v-block">
