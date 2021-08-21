@@ -2,6 +2,7 @@ from datetime import datetime
 from services.models import Services
 from contact.models import ContactInfo, SocialNetwork
 from projects.models import Projects
+from news.models import News
 
 
 def services_context_processor(request):
@@ -13,7 +14,8 @@ def services_context_processor(request):
     }
 def projects_context_processor(request):
     return {
-        "ifProject": True if Projects.objects.all() else False
+        "ifProject": True if Projects.objects.all() else False,
+        'ifNews': True if News.objects.all() else False,
     }
 
 

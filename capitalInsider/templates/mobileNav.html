@@ -21,9 +21,10 @@
                   {% if ifProject %}
                     <li><a href="{% url 'projects' %}">Projects</a></li>
                   {% endif %}
-                  
-                  <li><a href="{% url 'news' %}">News</a>
-                       
+
+                  {% if ifNews %}
+                    <li><a href="{% url 'news' %}">News</a>
+                  {% endif %}  
                   </li>
                   <li><a href="{% url 'about' %}">About Us </a></li>
                   <li><a href="{% url 'contact' %}">Contact Us </a></li>
