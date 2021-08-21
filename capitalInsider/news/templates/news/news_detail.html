@@ -126,9 +126,10 @@
               <div class="line"></div>
               <div id="comments" class="comments-area">
                 <h2 class="comments-title">
-                  {% if comments.count  <= 1 %}
+                  {% if num_of_comments  < 2 %}
                     {{ num_of_comments }} Comment
                   {% else %}
+                  {{ comments.count }}
                     {{ num_of_comments }} Comments
                   {% endif %}
                 </h2>
