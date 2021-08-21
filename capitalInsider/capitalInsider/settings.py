@@ -38,8 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # 'crispy_forms',
-    # 'base',
     'home',
     'services',
     'projects',
@@ -115,8 +113,6 @@ AUTH_PASSWORD_VALIDATORS = [
 
 
 
-# CRISPY_TEMPLATE_PACK = 'bootstrap4'
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
@@ -148,12 +144,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'images')
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-
-# visite this sites for more infor
-# myaccount.google.com/lesssecureapps
-# myaccount.google.com/DisplayUnlockCaptcha
-# myaccount.google.com/lapppaswords
 
 # Email settings
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
