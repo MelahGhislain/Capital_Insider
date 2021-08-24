@@ -1,17 +1,18 @@
 from django.shortcuts import render
 from .models import Services, Brochures
+from django.core.paginator import Paginator
 
 # Create your views here.
 def servicePage(request):
     services = Services.objects.all()
-    services_data = map(lambda data: {
-        "id": data.id,
-        "image": data.service_image ,
-        "title": data.title,
-        "description": data.description[:100],
-    },services)
+
+    paginator = Paginator(services, 3)
+    page_number = request.GET.get('page')
+    print(page_number)
+    print(paginator.get_page(2))
+    page_obj = paginator.get_page(1)
     return render(request, 'services/index.html',{
-        "services_data": services_data,
+        "services_data": page_obj,
     })
 
 

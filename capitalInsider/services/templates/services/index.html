@@ -23,11 +23,11 @@
                   <article class="col-sm-6 col-md-4 thumbnail-style thumbnail-icon-item text-left">
                    
                     <div class="thumbnail icon-left">
-                        <img class="img-icon-thumbnail" src="{{ service.image.url }}" alt="">
+                        <img class="img-icon-thumbnail" src="{{ service.service_image.url }}" alt="">
                       <div class="caption">
                         <h4>{{ service.title|title }}</h4>
                         <p>
-                          {{ service.description }} ...
+                          {{ service.description|slice:":100" }} ...
                         </p>
                         <a class="learn-more" href="{% url 'service-detail' service.id %}"><i class="fa fa-caret-right" aria-hidden="true"></i>  Learn More
                              
@@ -41,8 +41,27 @@
               </div>
               </div>
             </div><!-- End Row -->
+
+            <div class="pagination" style="display:flex; justify-content:center; align-items: center;">
+              <span class="step-links">
+                {% if services_data.has_previous %}
+                <a href="?page=1">&laquo; first</a>
+                <a href="?page={{ services_data.previous_page_number }}">previous</a>
+                {% endif %}
+        
+                <span class="current">
+                   page {{ services_data.number }} of {{ services_data.paginator.num_pages }}
+                </span>
+        
+                <a href="?page={{ services_data.next_page_number }}" >next</a>
+                <a href="?page={{ services_data.paginator.num_pages }}"> last &raquo;</a>
+              </span>
+            </div>
+
         </div><!-- End container -->
     </div> <!-- End section -->
+
+   
 
 
 {% endblock %}

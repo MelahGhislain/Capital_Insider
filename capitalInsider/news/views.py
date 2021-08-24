@@ -17,12 +17,7 @@ class NewsView(View):
             "date": news.date
         } , News.objects.all())
         archive = helper.get_dates(date_list)
-        # print(f"==========>>>>>>arcchive{archive}")
-        # filter_date = request.GET.get('month')
-        # print(f"==========>>>>>>filtered date{filter_date}")
         filtered_data = False # News.objects.filter(date=filter_date)
-        # print(f"==========>>>>>>filtered data{filter_date}")
-        # sets the new based on the filtered data
         news = filtered_data if filtered_data else News.objects.all().order_by('-date')
         
 
