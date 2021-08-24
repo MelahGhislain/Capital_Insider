@@ -26,14 +26,18 @@ class ContactView(View):
         if form.is_valid():
             username = form.cleaned_data['user_name']
             email = form.cleaned_data['email']
-            # number = form.cleaned_data['phone_num']
+            number = form.cleaned_data['phone_num']
             message = form.cleaned_data['message']
-            send_mail(
-                username, # subject
-                message, # message
-                email, # from email
-                ["melahghislain17@gmail.com"], # to email
-            )
+            name_phone = username + " " + number
+            try:
+                send_mail(
+                    name_phone, # subject
+                    message, # message
+                    email, # from email
+                    ["melahghislain17@gmail.com"], # to email : can take more than one email
+                )
+            except Exception as e:
+                print(f'============>>>>>>>>> {e}')
             
             return HttpResponseRedirect("/contact")
 
