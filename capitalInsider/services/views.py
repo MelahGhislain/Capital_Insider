@@ -5,14 +5,14 @@ from django.core.paginator import Paginator
 # Create your views here.
 def servicePage(request):
     services = Services.objects.all()
-
-    paginator = Paginator(services, 3)
-    page_number = request.GET.get('page')
-    print(page_number)
-    print(paginator.get_page(2))
-    page_obj = paginator.get_page(1)
+    
+    # pagination
+    # item_num = 6
+    # paginator = Paginator(services, item_num)
+    # page_number = request.GET.get('page')
+    # page_obj = paginator.get_page(page_number)
     return render(request, 'services/index.html',{
-        "services_data": page_obj,
+        "services_data": services,
     })
 
 
