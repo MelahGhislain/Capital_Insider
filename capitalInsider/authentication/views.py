@@ -14,6 +14,8 @@ def loginPage(request):
         if user is not None:
             login(request, user)
             return redirect('home')
+        else:
+            messages.info(request, "username or password incorrect")
 
     return render(request, 'authenticate/login.html')
 
@@ -34,3 +36,7 @@ def signUpPage(request):
 
 def forgotPassword(request):
     return render(request, 'authenticate/forgot-password.html')
+
+def logoutUser(request):
+    logout(request)
+    return redirect('login')
