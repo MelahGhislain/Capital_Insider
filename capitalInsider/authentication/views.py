@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render,  redirect
 from .forms import CreateUserForm
+from  django.contrib import messages
 
 # Create your views here.
 def loginPage(request):
@@ -8,11 +9,12 @@ def loginPage(request):
 
 def signUpPage(request):
     form = CreateUserForm()
+
     if request.method == 'POST':
         form = CreateUserForm(request.POST)
         if form.is_valid():
             form.save()
-
+            return redirect('login')
     context = {"form": form}
     return render(request, 'authenticate/signup.html', context)
 
