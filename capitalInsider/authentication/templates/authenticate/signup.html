@@ -18,6 +18,17 @@
             <div class="auth__content">
                 <div class="auth__title">Sign Up</div>
                 <form class="auth__form" method="post">
+                    {% if form.errors %}
+                        <div class="auth__error">
+                            {% for field in form %}
+                                {% for error in field.errors %}
+                                <p class="auth__msg">{{ error }}</p>
+                                {% endfor %}
+                            {% endfor %}    
+                        </div> 
+                            
+                    {% endif %}
+
                     {% csrf_token %}
                     <div class="auth__control">
                         <label for="name">Username</label>

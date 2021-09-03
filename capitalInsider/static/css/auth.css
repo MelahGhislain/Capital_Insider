@@ -41,6 +41,24 @@ body{
     background-color: rgb(46, 44, 44);
     border-radius: .5rem;
 }
+.auth__wrapper .auth__container .auth__content .auth__error{
+    background: rgba(150, 3, 3, 0.616);
+    border-radius: .5rem;
+    border: 1px solid red;
+    font-size: 1.5rem;
+    color: rgb(253, 155, 155);
+    margin-top: 1.5rem;
+    padding: 0 1rem;
+}
+.auth__wrapper .auth__container .auth__content .auth__message{
+    background: rgba(82, 252, 82, 0.418);
+    border-radius: .5rem;
+    border: 1px solid rgb(1, 190, 1);
+    font-size: 1.5rem;
+    color: rgb(154, 255, 154);
+    margin-top: 1.5rem;
+    padding: 0 1rem;
+}
 .auth__wrapper .auth__container .auth__content .auth__title{
     display: block;
     padding: .5rem;
