@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'about',
     'contact',
     'news',
-    'auth'
+    'authentication'
     
 ]
 
