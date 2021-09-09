@@ -166,3 +166,8 @@ EMAIL_USE_TLS = True
 # AWS_DEFAULT_ACL = None
 # DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 # STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+
+# from django.contrib.auth.mixins import LoginRequiredMixin
+    # login_url = '/login/'
+    # redirect_field_name = 'login'
