@@ -5,6 +5,9 @@ from django.contrib.auth import authenticate, login, logout
 
 # Create your views here.
 def loginPage(request):
+    
+    if request.user.is_authenticated:
+        return redirect('profiles')
 
     if request.method == 'POST':
         username = request.POST.get('username')
@@ -13,7 +16,7 @@ def loginPage(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect('home')
+            return redirect(request.GET['next'] if 'next' in request.GET else 'home')
         else:
             messages.info(request, "username or password incorrect")
 

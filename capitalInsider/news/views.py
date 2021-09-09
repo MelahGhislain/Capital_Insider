@@ -7,9 +7,11 @@ from .models import News, Comment
 from about.models import AboutUs
 from .forms import CommentForm
 from . import helper
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 # Create your views here.
-class NewsView(View):
+class NewsView(LoginRequiredMixin, View):
+    login_url = 'login'
     def get(self, request):
         about = AboutUs.objects.first()
         # get the date
@@ -36,7 +38,8 @@ class NewsView(View):
         return render(request, 'news/index.html', context)
 
 
-class NewsDetailView(View):
+class NewsDetailView(LoginRequiredMixin, View):
+    login_url = 'login'
     def get(self, request, id):
         news = News.objects.get(id=id)
         comments = news.comments.all()

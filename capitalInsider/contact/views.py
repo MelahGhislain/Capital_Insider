@@ -4,9 +4,11 @@ from .forms import ContactForm
 from django.views import View
 from django.http import  HttpResponseRedirect
 from django.core.mail import  send_mail
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 # Create your views here.
-class ContactView(View):
+class ContactView(LoginRequiredMixin, View):
+    login_url = 'login'
     def get(self, request):
         advisors = FinancialAdvisor.objects.all()
         contact = ContactInfo.objects.last()
