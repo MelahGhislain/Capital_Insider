@@ -10,7 +10,7 @@ from . import helper
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 # Create your views here.
-class NewsView(LoginRequiredMixin, View):
+class NewsView( View): # LoginRequiredMixin,
     login_url = 'login'
     def get(self, request):
         about = AboutUs.objects.first()
@@ -38,7 +38,7 @@ class NewsView(LoginRequiredMixin, View):
         return render(request, 'news/index.html', context)
 
 
-class NewsDetailView(LoginRequiredMixin, View):
+class NewsDetailView(View):
     login_url = 'login'
     def get(self, request, id):
         news = News.objects.get(id=id)

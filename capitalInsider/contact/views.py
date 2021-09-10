@@ -7,7 +7,7 @@ from django.core.mail import  send_mail
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 # Create your views here.
-class ContactView(LoginRequiredMixin, View):
+class ContactView(View): # LoginRequiredMixin, 
     login_url = 'login'
     def get(self, request):
         advisors = FinancialAdvisor.objects.all()

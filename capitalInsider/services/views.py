@@ -4,21 +4,16 @@ from django.core.paginator import Paginator
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
-@login_required(login_url='login')
+# @login_required(login_url='login')
 def servicePage(request):
     services = Services.objects.all()
     
-    # pagination
-    # item_num = 6
-    # paginator = Paginator(services, item_num)
-    # page_number = request.GET.get('page')
-    # page_obj = paginator.get_page(page_number)
     return render(request, 'services/index.html',{
         "services_data": services,
     })
 
 
-@login_required(login_url='login')
+# @login_required(login_url='login')
 def serviceDetail(request, id):
     bronchures = Brochures.objects.first()
     services = Services.objects.all()
