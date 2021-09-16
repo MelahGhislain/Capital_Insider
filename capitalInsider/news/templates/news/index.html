@@ -3,7 +3,18 @@
 {% load static %}
 
 {% block title %}
-    <h2>News</h2>
+<section class="bg-grey padding-top-45 padding-bottom-45 clearfix">
+    <div class="container">
+        <div class="row">
+          <div class="section-title">
+            <div class="col-md-12">
+                <h2>News</h2>
+            </div>
+          </div>
+        </div><!-- End Row -->
+    </div><!-- End container -->
+  </section><!--  End Section -->
+
 {% endblock %}
 
 
@@ -27,7 +38,7 @@
                                 <img src="{{ article.image.url }}" class="img-responsive" alt="Image">
                               </a>
                               <div class="news-text-container">
-                                <a href="{% url 'news-detail' article.id %}"><h3 class="title-news">{{ article.title }}</h3></a>
+                                <a href="{% url 'news-detail' article.id %}"><h3 class="title-news" style="color: rgb(4, 167, 207);">{{ article.title }}</h3></a>
                                  <div class="latest-news-data">
                                     <!-- <span class="tags"><a href="{% url 'news-detail' article.id %}">{{ article.category }}</a></span> -->
                                     <span class="dates">{{ article.date }}</span>

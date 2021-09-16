@@ -3,7 +3,18 @@
 {% load static %}
 
 {% block title %}
-    <h2>About us</h2>
+<section class="bg-grey padding-top-45 padding-bottom-45 clearfix">
+  <div class="container">
+      <div class="row">
+        <div class="section-title">
+          <div class="col-md-12">
+            <h2>About us</h2>
+          </div>
+        </div>
+      </div><!-- End Row -->
+  </div><!-- End container -->
+</section><!--  End Section -->
+ 
 {% endblock %}
 
 
@@ -33,7 +44,7 @@
                     </div>
                 </div>
                 <div class="col-xs-12 col-md-6">
-                  <h2>{{ about.title|title }}</h2>
+                  <h2 style="color: rgb(4, 167, 207);">{{ about.title|title }}</h2>
                   <div class="clearfix"></div> 
                     <p style="color: rgb(29, 28, 28); font-family: Ubuntu;">{{ about.description }}</p>
                   <!-- <div class="counter-up counter-up-style-1 counter-up-style-3">

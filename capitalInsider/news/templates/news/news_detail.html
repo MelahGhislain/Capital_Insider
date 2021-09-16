@@ -3,7 +3,8 @@
 {% load static %} 
 
 {% block title %}
-    <h2>Company News</h2>
+
+
 {% endblock %} 
 
 {% block sub-title %}
@@ -22,7 +23,7 @@
         id="primary"
         class="content-area col-md-12 no-padding-right padding-bottom-70">
         <main id="main" class="site-main padding-top-50">
-          <h1>{{ news.title }}</h1>
+          <h1 style="color: rgb(4, 167, 207);">{{ news.title }}</h1>
           <div class="latest-news-data">
             <!-- <span class="tags"
               ><a href="#">Financial</a>, <a href="#"> Maketing</a></span
@@ -39,61 +40,7 @@
             <p style="margin-bottom:25px;">
               {{news.news_detail}}
             </p>
-            <!-- <br />
-            <p>
-              Nulla fermentum eros vitae est finibus dapibus. Aliquam porta
-              nulla a elit varius efficitur. In in magna sed turpis venenatis
-              tristique eu eget neque. Duis condimentum libero ornare quam
-              tincidunt interdum. _set porttitor nisi ut lectus
-              pellentesque, ut fringilla leo convallis.
-            </p> -->
-            <!-- <br />
-            <blockquote>
-              <p>
-                Wullam placerat vehicula pulvinar. Nam convallis euismod
-                maximus. Suspendisse dignissim, ante at posuere cursus, diam
-                nisl viverra felis, vel malesuada ex ante ac urna.
-              </p>
-              <strong>CHERYL CRUZ</strong>
-            </blockquote> -->
-            <!-- <br />
-            <p>
-              Duis gravida tempus imperdiet. Vivamus elit vel consequat
-              elementum. Cras consequat lorem non orci sagittis, eget volutpat
-              neque imperdiet. Nam auctor nisi vitae enim accumsan, ac dignissim
-              tortor consequat.
-            </p> -->
-
-            <!-- <ul class="style-list-circle">
-              <li>
-                <a href="#">Nullam consequat lacus non luctus finibus.</a>
-              </li>
-              <li><a href="#">Interdum et malesuada fames ac ante</a></li>
-              <li>
-                <a href="#">Nam justo ipsum, sagittis sed hendrerit ac</a>
-              </li>
-              <li><a href="#">Interdum et malesuada fames ac ante</a></li>
-              <li>
-                <a href="#">Nam justo ipsum, sagittis sed hendrerit ac</a>
-              </li>
-            </ul> -->
-
-          </div>
-          <!-- <div class="footer-detail-blog">
-            <div class="tags-bottom">
-              <p>
-                TAGES&nbsp;: &nbsp;<a href=""> Construction</a>,&nbsp;
-                <a href="">Architect</a>,&nbsp; <a href="">House</a> ,&nbsp;
-                <a href="">Building</a>
-              </p>
-            </div>
-            <div class="share-bottom">
-              <p>
-                SHARE&nbsp;: &nbsp;<a href=""> Facebook</a>,&nbsp;
-                <a href="">Twitter</a>,&nbsp; <a href="">Google+</a>
-              </p>
-            </div>
-          </div> -->
+            
           <div class="line"></div>
           <div class="entry_post_navigation">
             {% if page_obj.has_previous %}

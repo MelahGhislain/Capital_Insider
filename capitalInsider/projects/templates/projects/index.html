@@ -2,7 +2,18 @@
 {% load static %}
 
 {% block title %}
-    <h2>Our Projects</h2>
+<section class="bg-grey padding-top-45 padding-bottom-45 clearfix">
+  <div class="container">
+      <div class="row">
+        <div class="section-title">
+          <div class="col-md-12">
+            <h2>Our Projects</h2>
+          </div>
+        </div>
+      </div><!-- End Row -->
+  </div><!-- End container -->
+</section>
+    
 {% endblock %}
 
 
@@ -39,7 +50,7 @@
                               <a class="img-contain-isotope" href="{% url 'project-detail' project.id %}">
                               <img src="{{ project.main_image.url }}" class="img-responsive" alt="Image">
                               </a>
-                              <a href="{% url 'project-detail' project.id %}"><h5 class="title-project">{{ project.title|title }}</h5></a>
+                              <a href="{% url 'project-detail' project.id %}"><h5 class="title-project" style="color: rgb(4, 167, 207);">{{ project.title|title }}</h5></a>
                               <a href="{% url 'project-detail' project.id %}" class="cateProject">{{ project.category|title }}</a>
                             </div>  
                           {% endfor %}

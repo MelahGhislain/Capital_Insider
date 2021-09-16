@@ -46,108 +46,93 @@
         </section>  
 
         <!-- Component Media Left Icon Our Services-->
-        <section class="bg-grey">
+        <section class="">
             <div class="container">
             <div class="row">
-                <div class="col-md-12">
-                        <h2 class="title clearfix">Our Services</h2>
-                </div> <!-- End col -->
-                <div class="services-warp">
-                    {% if services.0 %}
-                    <article class=" col-sm-6 col-md-4 media-style media-left-icon-item">
-                        <div class="media">
-                        <div class="media-left">
-                            <i class="fa fa-bar-chart"></i>
-                        </div>
-                        <div class="media-body">
-                            <h4 class="">{{ services.0.title|title }}</h4>
-                            <p>{{ services.0.description|slice:":100" }} ...  
-                                <a class="learn-more" href="{% url 'service-detail' services.0.id %}">Read More</a>
-                            </p>
-                            
-                        </div>
-                        </div>
-                    </article><!-- End article -->
-                    {% endif %}
+                <div class=" col-sm-12 col-md-6 bg-dark" style="padding: 80px; color: white;">
+                    <p>SERVICES</p>
+                    <h2 style="padding: 15px 0;color: white;">CAPITAL INSIDER BANKING APP THAT SUIT YOUR NEEDS</h2>
+                    <p>
+                        The banking App First Pay offers all the standard banking services required for individuals and small businesses – available all time and right in your pocket.
+                    </p>
+                    <a href="{% url 'services' %}" style="text-decoration:none; color:grey; padding:30px 0 0 0;">See in detail</a>
+                </div>
 
-                    {% if services.1 %}
-                    <article class=" col-sm-6 col-md-4 media-style media-left-icon-item">
-                        <div class="media">
-                        <div class="media-left">
-                            <i class="fa fa-money"></i>
-                        </div>
-                        <div class="media-body">
-                            <h4 class="">{{ services.1.title|title }}</h4>
-                            <p>{{ services.1.description|slice:":100" }} ...
-                                <a class="learn-more" href="{% url 'service-detail' services.1.id %}">Read More</a>
-                            </p>
-                        </div>
-                        </div>
-                    </article><!-- End article -->
-                    {% endif %}
-                    {% if services.2 %}
-                    <article class=" col-sm-6 col-md-4 media-style media-left-icon-item">
-                        <div class="media">
-                        <div class="media-left">
-                            <i class="fa fa-calculator"></i>
-                        </div>
-                        <div class="media-body">
-                            <h4 class="">{{ services.2.title|title }}</h4>
-                            <p>{{ services.2.description|slice:":100" }} ...
-                                <a class="learn-more" href="{% url 'service-detail' services.2.id %}">Read More</a>
-                            </p>
-                        </div>
-                        </div>
-                    </article><!-- End article -->
-                    {% endif %}
-                    {% if services.3 %}
-                    <article class=" col-sm-6 col-md-4 media-style media-left-icon-item">
-                        <div class="media">
-                        <div class="media-left">
-                            <i class="fa fa-university"></i>
-                        </div>
-                        <div class="media-body">
-                            <h4 class="">{{ services.3.title|title }}</h4>
-                            <p>{{ services.3.description|slice:":100" }} ...
-                                <a class="learn-more" href="{% url 'service-detail' services.3.id %}">Read More</a>
-                            </p>
-                        </div>
-                        </div>
-                    </article><!-- End article -->
-                    {% endif %}
-                    {% if services.4 %}
-                    <article class=" col-sm-6 col-md-4 media-style media-left-icon-item">
-                        <div class="media">
-                        <div class="media-left">
-                            <i class="fa fa-shield"></i>
-                        </div>
-                        <div class="media-body">
-                            <h4 class="">{{ services.4.title|title }}</h4>
-                            <p>{{ services.4.description|slice:":100" }} ...
-                                <a class="learn-more" href="{% url 'service-detail' services.4.id %}">Read More</a>
-                            </p>
-                        </div>
-                        </div>
-                    </article><!-- End article -->
-                    {% endif %}
-                    
-                    {% if services.5 %}
-                    <article class=" col-sm-6 col-md-4 media-style media-left-icon-item">
-                        <div class="media">
-                        <div class="media-left">
-                            <i class="fa fa-home"></i>
-                        </div>
-                        <div class="media-body">
-                            <h4 class="">{{ services.5.title|title }}</h4>
-                            <p>{{ services.5.description|slice:":100" }} ...
-                                <a class="learn-more" href="{% url 'service-detail' services.5.id %}">Read More</a>
-                            </p>
-                        </div>
-                        </div>
-                    </article><!-- End article -->
-                    {% endif %}<!-- End article -->
-                </div><!-- End Services Warp -->
-            </div> <!-- End Row -->
+                <div class=" col-sm-12 col-md-6">
+                    <div class="row">
+                        <!-- <div class="col-md-12">
+                                <h2 class="title clearfix">Our Services</h2>
+                        </div>  -->
+                        <div class="services-warp">
+                            {% if services.0 %}
+                            <article class=" col-sm-12 col-md-6 media-style media-left-icon-item">
+                                <div class="media">
+                                <div class="media-left">
+                                    <i class="fa fa-bar-chart"></i>
+                                </div>
+                                <div class="media-body">
+                                    <h4 style="color: rgb(4, 167, 207);">{{ services.0.title|title }}</h4>
+                                    <p>{{ services.0.description|slice:":100" }} ...  
+                                        <a class="learn-more" href="{% url 'service-detail' services.0.id %}">Read More</a>
+                                    </p>
+                                    
+                                </div>
+                                </div>
+                            </article><!-- End article -->
+                            {% endif %}
+        
+                            {% if services.1 %}
+                            <article class=" col-sm-12 col-md-6 media-style media-left-icon-item">
+                                <div class="media">
+                                <div class="media-left">
+                                    <i class="fa fa-money"></i>
+                                </div>
+                                <div class="media-body">
+                                    <h4 style="color: rgb(4, 167, 207);">{{ services.1.title|title }}</h4>
+                                    <p>{{ services.1.description|slice:":100" }} ...
+                                        <a class="learn-more" href="{% url 'service-detail' services.1.id %}">Read More</a>
+                                    </p>
+                                </div>
+                                </div>
+                            </article><!-- End article -->
+                            {% endif %}
+                            {% if services.2 %}
+                            <article class=" col-sm-12 col-md-6 media-style media-left-icon-item">
+                                <div class="media">
+                                <div class="media-left">
+                                    <i class="fa fa-calculator"></i>
+                                </div>
+                                <div class="media-body">
+                                    <h4 style="color: rgb(4, 167, 207);">{{ services.2.title|title }}</h4>
+                                    <p>{{ services.2.description|slice:":100" }} ...
+                                        <a class="learn-more" href="{% url 'service-detail' services.2.id %}">Read More</a>
+                                    </p>
+                                </div>
+                                </div>
+                            </article><!-- End article -->
+                            {% endif %}
+                            {% if services.3 %}
+                            <article class=" col-sm-12 col-md-6 media-style media-left-icon-item">
+                                <div class="media">
+                                <div class="media-left">
+                                    <i class="fa fa-university"></i>
+                                </div>
+                                <div class="media-body">
+                                    <h4 style="color: rgb(4, 167, 207);">{{ services.3.title|title }}</h4>
+                                    <p>{{ services.3.description|slice:":100" }} ...
+                                        <a class="learn-more" href="{% url 'service-detail' services.3.id %}">Read More</a>
+                                    </p>
+                                </div>
+                                </div>
+                            </article><!-- End article -->
+                            {% endif %}
+                            
+                        </div><!-- End Services Warp -->
+                    </div> <!-- End Row -->
+                </div>
+                
+            </div>
+            
             </div><!-- End container -->
         </section>
 
@@ -160,8 +145,8 @@
             <div class="row">
                 <div class="col-md-12">
                 <div class="counter-up counter-up-style-1 text-center">
-                    <h2>Our Mission</h2>
-                    <p style="font-size: 16px;">
+                    <h2 style="color: rgb(4, 167, 207);">Our Mission</h2>
+                    <p style="font-size: 16px; text-align: left;">
                         As the financial industry evolves , client’s needs become more complex, 
                         capital insiders has and continue to reinvent, innovate and transform itself to be ready 
                         for the business landscape of tomorrow. As capital insiders our goal is enable good financial 
@@ -297,7 +282,7 @@
             <div class="container">
             <div class="row">
                         <div class="three-column-text"> 
-                        <h2 class="title ">We Makes It Easy</h2>
+                        <h2 class="title " style="color: rgb(4, 167, 207);">We Makes It Easy</h2>
                         <div class="col-md-4">
                             <div class="make-easy-item">
                             <h4>Whatever</h4>

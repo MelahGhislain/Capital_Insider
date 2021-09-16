@@ -2,7 +2,14 @@
 {% load static %}
 
 {% block title %}
-    <h2>Our services</h2>
+<!-- bg-grey padding-top-45 padding-bottom-45 clearfix -->
+    <section class="" style="background-image: url(../../static/images/new.png);background-repeat: no-repeat; background-size:cover; height: 80vh;">
+      <div class="container" style="display:flex; justify-content:center; align-items:center; height: inherit; ">
+        <div>
+          <h2 style="color: rgb(4, 167, 207); text-align: center;">CAPITAL INSIDER SERVICES OFFERS</h2>
+        </div>
+      </div><!-- End container -->
+    </section><!--  End Section -->
 {% endblock %}
 
 
@@ -25,7 +32,7 @@
                     <div class="thumbnail icon-left">
                         <img class="img-icon-thumbnail" src="{{ service.service_image.url }}" alt="">
                       <div class="caption">
-                        <h4>{{ service.title|title }}</h4>
+                        <h4 style="color: rgb(4, 167, 207);">{{ service.title|title }}</h4>
                         <p>
                           {{ service.description|slice:":100" }} ...
                         </p>

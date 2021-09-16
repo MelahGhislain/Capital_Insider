@@ -2,7 +2,18 @@
 {% load static %}
 
 {% block title %}
-    <h2>Our services</h2>
+<section class="bg-grey padding-top-45 padding-bottom-45 clearfix">
+  <div class="container">
+      <div class="row">
+        <div class="section-title">
+          <div class="col-md-12">
+            <h2>Our services</h2>
+          </div>
+        </div>
+      </div><!-- End Row -->
+  </div><!-- End container -->
+</section><!--  End Section -->
+    
 {% endblock %}
 
 
@@ -35,7 +46,7 @@
                {% endif %}
                
                   <div class="h-block">
-                      <h3>{{  service.title|title }}</h3>
+                      <h3 style="color: rgb(4, 167, 207);">{{  service.title|title }}</h3>
                       <div class="row">
                         <div class="col-sm-6 col-md-8 left-hblock">
                           <p>{{ service.description }}</p>
@@ -63,7 +74,7 @@
                           {% if service.cash_flow_statement or service.balance_sheet_statement or service.income_statement %}
                             <div class="col-md-6 v-block">
                               {% if service.cash_flow_statement %}
-                                  <h3>Cash Flow Statement</h3>
+                                  <h3 style="color: rgb(4, 167, 207);">Cash Flow Statement</h3>
                                   <div class="v-block-detail">
                                     <p>{{ service.cash_flow_statement }}</p>
                                   </div>
@@ -102,7 +113,7 @@
                             </div><!-- End Vblog -->
                             <div class="col-md-6 v-block">
                               {% if service.balance_sheet_statement %}
-                                  <h3>Balance Sheet</h3>
+                                  <h3 style="color: rgb(4, 167, 207);">Balance Sheet</h3>
                                   <div class="v-block-detail">
                                     <p>{{ service.balance_sheet_statement }}</p>
                                   </div>
@@ -110,7 +121,7 @@
                             </div>  <!--  End col -->
                             <div class="col-md-6 v-block">
                               {% if service.income_statement %}
-                                  <h3>Income Statement</h3>
+                                  <h3 style="color: rgb(4, 167, 207);">Income Statement</h3>
                                     <div class="v-block-detail">
                                       <p>{{ service.income_statement }}</p>
                                     </div>

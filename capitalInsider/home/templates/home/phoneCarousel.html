@@ -1,9 +1,9 @@
 {% load static %}
 
 
-<section class="row " style="padding: 0;">
-  <div class="col-12">
-      <div id="myCarousel" class="carousel slide " data-ride="carousel">
+<section class="row" style="padding: 0 50px;">
+  <div class="col-sm-12 col-md-6">
+      <div id="myCarousel" class="carousel slide " data-ride="carousel" style="background-image: url(../../static/images/bg-phone.png);">
         
           <!-- <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -77,21 +77,27 @@
           </a>
       </div>
 
-      <div class="col-12" style="display: flex; justify-content:center;">
-        <div class="tp-caption sfr stb group-btn-slider"
-        data-x="0" 
-        data-y="580" 
-      
-        data-speed="400"
-        data-start="1900"
-        data-easing="easeInOut"
-        > <a href="{% url 'services' %}" class="ot-btn large-btn btn-rounded btn-1">
-          <img src="{% static 'images/playstore.png' %}" alt="playstore" width="200rem">
-        </a>  
-      </div>
-        
-    </div>
+  </div>
 
+  <div class="col-sm-12 col-md-6" style="padding: 30px;">
+    <p style="text-align: center;">AVAILABILITY</p>
+    <h1 style="color: rgb(4, 167, 207); padding: 20px 0; text-align: center;">GET YOUR BANKING APP NOW</h1>
+    <p style="text-align: center;"> Get in to your favourite app store and download the First Pay Consumer App and become 
+      part of the International Banking System with ease of access and service.</p>
+    <div class="col-12" style="display: flex; justify-content:center; margin-top: 10rem;">
+      <div class="tp-caption sfr stb group-btn-slider"
+      data-x="0" 
+      data-y="580" 
+    
+      data-speed="400"
+      data-start="1900"
+      data-easing="easeInOut"
+      > <a href="{% url 'services' %}" class="ot-btn large-btn btn-rounded btn-1">
+        <img src="{% static 'images/playstore.png' %}" alt="playstore" width="200rem">
+      </a>  
+    </div>
+      
+  </div>
   </div>
   
 </section>
