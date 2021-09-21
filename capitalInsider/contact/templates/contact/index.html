@@ -15,11 +15,19 @@
 {% endblock %} 
 {% block sub-title %}
 <li class="active">Contact Us</li>
-{% endblock %} {% block content %}
+{% endblock %}
+
+{% block content %}
 
 <!-- Section form contact -->
 <section class="padding-top:50px;">
   <div class="container">
+
+
+  
+
+
+
     <div class="row">
       <div class="col-md-7 left-contact">
         <h4>Contact Info</h4>
@@ -152,6 +160,14 @@
       <!-- End col -->
       <div class="col-md-5 right-contact">
         <h4>Send Us a Message</h4>
+        {% if messages %}
+     
+          <ul class="messages">
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }} <a class="remove">x</a></li>
+            {% endfor %}
+          </ul>
+        {% endif %}
         <form
           class="form-inline form-contact-finance form-contact-2"
           name="contact"

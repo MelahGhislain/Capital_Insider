@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-p9iv0^wbkhh3sehd*r0l+cvuxrbw(f&#j!!7n&x$j1n**^0&1u
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -44,9 +44,7 @@ INSTALLED_APPS = [
     'projects',
     'about',
     'contact',
-    'news',
-    'authentication'
-    
+    'news',   
 ]
 
 MIDDLEWARE = [
@@ -159,20 +157,3 @@ EMAIL_HOST_USER = 'melahghislain17@gmail.com' # my email adress
 EMAIL_HOST_PASSWORD = 'ghis1997' # gmail password
 EMAIL_USE_TLS = True
 
-# EMAIL_USE_SSL = False
-
-#serving static files in AWS
-
-# AWS_ACCESS_KEY_ID = ''
-# AWS_SECRET_ACCESS_KEY = ''
-# AWS_SECRET_BUCKET_NAME = ''
-
-# AWS_S3_FILE_OVERWRITE = False
-# AWS_DEFAULT_ACL = None
-# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-
-
-# from django.contrib.auth.mixins import LoginRequiredMixin
-    # login_url = '/login/'
-    # redirect_field_name = 'login'

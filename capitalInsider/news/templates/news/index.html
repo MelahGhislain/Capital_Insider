@@ -54,29 +54,16 @@
                         <ul class="pagination pagination-finance">
                             {% if news.has_previous %}
                             <li><a class="" href="?page=1">1</a></li>
-                            <!-- <a href="?page=1">&laquo; first</a> -->
                             <li><a href="?page={{ news.previous_page_number }}">&laquo;</a></li>
                             {% endif %}
-                            <!-- <span class="current">
-                                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
-                            </span> -->
-                            <!-- <li><a>Page</a></li>
-                            <li><a class="current">{{ news.number }}</a></li>
-                            <li style="text-align: center;">of</li>
-                            <li><a>{{ news.paginator.num_pages }}</a></li> -->
+                            
                             <li>Page {{ news.number }} of {{ news.paginator.num_pages }}.</li>
                             
                             {% if news.has_next %}
                                 <li><a href="?page={{ news.next_page_number }}">&raquo;</a></li>
                                 <li><a href="?page={{ news.paginator.num_pages }}">{{ news.paginator.num_pages }}</a></li>
                             {% endif %}
-                            <!-- <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
-                             <li class="threedots">...</li>
-                              <li><a href="#">25</a></li>
-                            <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i></a></li> -->
+                            
                           </ul>
                       </div>
               </div>
@@ -95,13 +82,6 @@
                 <aside id="categories-2" class="widget widget_categories">
                     <h3 class="widget-title" >Categories</h3>
   
-                    <!-- <ul>
-                        {% for news_category in news %}
-                            <li><a href="#">{{ news_category.category|title }}</a></li>
-                        {% endfor %}
-                      
-                    </ul>  -->
-                    <!-- End Ul -->
                 </aside>
   
                 <aside class="promotion clearboth">
@@ -123,32 +103,7 @@
                   </ul> <!-- End Ul -->
                 </aside>
   
-                <!-- <aside class="widget widget_tag_cloud">
-                    <h3 class="widget-title">Tags</h3>
-                    <div class="tagcloud">
-                        <a href="#">audio</a>
-                        <a href="#">gallery</a>
-                        <a href="#">image</a>
-                        <a href="#">music</a>
-                        <a href="#">photo</a>
-                        <a href="#">quote</a>
-                        <a href="#">text</a>
-                        <a href="#">video</a>
-                        <a href="#">vimeo</a>
-                        <a href="#">youtube</a>
-                    </div>
-                </aside> -->
-  
-                <!-- <aside class="widget widget_meta">
-                  <h3 class="widget-title">Meta</h3> 
-                  <ul>
-                      <li><a href="#">Site Admin</a></li>          
-                      <li><a href="#">Log out</a></li>
-                      <li><a href="#">Entries <abbr>RSS</abbr></a></li>
-                      <li><a href="#">Comments <abbr>RSS</abbr></a></li>
-                      <li><a href="#">WordPress.org</a></li>           
-                  </ul>
-              </aside> -->
+            
               </div>
           </div><!-- End Row -->
   

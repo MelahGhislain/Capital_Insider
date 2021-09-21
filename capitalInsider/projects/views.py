@@ -1,9 +1,7 @@
 from django.shortcuts import render
 from .models import Projects
-from django.contrib.auth.decorators import login_required
 
 # Create your views here.
-# @login_required(login_url='login')
 def projectPage(request):
     projects = Projects.objects.all().order_by("-year_completed")
     # will be use to filter  the projects to get mainImage, title, categoty
@@ -19,7 +17,7 @@ def projectPage(request):
         "project_categories": project_categories,
         })
 
-# @login_required(login_url='login')
+
 def projectDetail(request, id):
     project = Projects.objects.get(pk=id)
     return render(request, 'projects/project_detail.html', {"project": project})

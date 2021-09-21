@@ -2,14 +2,9 @@ from django.db import models
 
 # Create your models here.
 
-# if category will be needed
-
-# class Category(models.Model):
-#     category = models.CharField(max_length=150)
 
 class News(models.Model):
     title = models.CharField(max_length=200)
-    # category = models.ForeignKey(Category, on_delete=models.SET_NUL, null=True)
     date = models.DateField(auto_now_add=True)
     news_detail = models.TextField(blank=False, null=False)
     image = models.ImageField(blank=False, null=False)

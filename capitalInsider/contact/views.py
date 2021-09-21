@@ -4,16 +4,16 @@ from .forms import ContactForm
 from django.views import View
 from django.http import  HttpResponseRedirect
 from django.core.mail import  send_mail
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib import messages
 
 # Create your views here.
-class ContactView(View): # LoginRequiredMixin, 
+class ContactView(View): 
     login_url = 'login'
     def get(self, request):
         advisors = FinancialAdvisor.objects.all()
         contact = ContactInfo.objects.last()
         social_networks = SocialNetwork.objects.all()
-
+        # messages.success(request, 'Profile details updated.')
         form = ContactForm()
 
         return render(request, "contact/index.html", {
@@ -36,11 +36,10 @@ class ContactView(View): # LoginRequiredMixin,
                     name_phone, # subject
                     message, # message
                     email, # from email
-                    ["melahghislain17@gmail.com"], # to email : can take more than one email
+                    ["contact@capitalinsiders.io"], # to email : can take more than one email
                 )
             except Exception as e:
-                print(f'============>>>>>>>>> {e}')
-            
+                print("hello")
             return HttpResponseRedirect("/contact")
 
         advisors = FinancialAdvisor.objects.all()
